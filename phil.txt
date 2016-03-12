@@ -1,0 +1,2411 @@
+tony-tyson You made an excellent suggestion, that each WL diagnostic metric could each be the *degree to which that null test is passed*. egawiser pointed out that a suitable combination of such diagnostics could pass as a Figure of Merit, and indeed could be (approximately) related to the Dark Energy Figure of Merit. Could you please review the WL section and edit it, along with your WL colleagues, to reflect this thought? jmeyers314 jasondrhodes do you have comments on this idea?
+
+The supernove group think they might need a Team so that they can mention each other, to emulate having an email list. Let me know if you want one, and who you want added to it (GitHub usernames, please!). 
+
+Check out the Twinkles Task Force summary slide I made for Thursday's final plenary session! Comments/corrections welcome.
+
+I'm in the Tuesday WL/DM lunch at the SLAC 2016 collaboration meeting, with wadawson SimonKrughoff TallJimbo RobertLuptonTheGood wmwv and others, and it seems that there is a need for some CI collaboration support, in the form of a "Getting Started with DM" page. This could (I think) be mostly annotated links, to things like:
+
+The latest documentation on getting set up (with recommendations from us)
+The Twinkles Cookbook, Will's GalSim analysis script, and other examples of DESC usage of DM code - and of course the DM team's own examples
+ The Stack API doxygen system, or whatever DM replaces it with. jonathansick can advise here I think
+The DM catalog schema and related notes 
+The excellent community.lsst.org system, for asking questions about things that DESC members can't find in the pages linked from our Getting Started page
+
+
+and probably others too.
+
+Also, I noticed while looking at Perry's code that while the DM function names are very well-designed, I find myself wanting to click on their names and be shown the docstring etc. Is there an IDE and setup we can recommend that could enable this?
+
+
+In the discussion:
+
+We talked about how it was possible for Jim and Robert to give such high value feedback to Will on his deblending results (he showed plots, and the code that produced them). We agreed that a demo, in ipython notebook form, had enabled the interaction, and Jim pointed out that community.lsst.org enables the kind of stackoverflow Q&A that rmjarvis strongly advocated. DESC demos are particularly valuable because they are specific. 
+
+Both Simon and cwwalter mentioned that bitrot is an issue for demos - keeping them up to date is work, but Chris pointed out that having people (eg new students) actually run the demos is a good way of keeping them up to date. 
+
+Simon, Robert and Jim then provided some tips on detailed use of the LSST code - in terms of how to think about LSST objects, and some general code design notes (about how the objects work, in terms of consistent inputs/outputs). I wondered if there was a DM linter configuration we could point people at, to catch some potential pitfalls? Or do you just need to learn the DM conventions?
+
+
+
+This seems important, if we are going to enable casual DM users like myself to contribute to Twinkles. This PR thread is to show you my attempts.
+
+Hi jchiang87 - I am trying to reproduce your postage stamps, and documenting everything I need to do to be able to do that in INSTALL.md. Can you please read through the steps I followed, and then comment on the problem I am hitting? 
+
+
+Our referee says:
+
+"Page 12, Figure 6, the different linestyles should be replaced by different colors to make the whole plots more readable, and to be able to distinguish the 4 "stars" corresponding to a lens probability threshold of 0.95 in each case."
+
+Can you take care of this please, cpadavis ? I think we can argue down the request for different colors (the different linestyles are enough) but the points need fixing. The legend will need to show which point style goes with each line... If you decide to experiment with color, can you choose 4 shades of blue and orange, please? Thanks!
+
+Edit SWAP to make red and blue points bigger, red and blue trajectories thicker and less alpha'd, red and blue histograms in the foreground with alpha=1.
+
+It looks to me as though we might not be dealing with the strong lensing regime yet, from the looks of the catalog sticks. If |g| > 1, we need to use a different lens equation - see Seitz & Schneider for the formula, but as I recall I think you just make the transformation g -> 1/g*
+
+This was pointed out by Chris at the WL meeting. Mandeep also made the good suggestion of adding a scale bar labelled "$\epsilon = 0.05$" (or something) so we know what we're looking at. Maybe switching to always using sticks will solve the first part automatically?
+
+
+
+We need to start a write-up of your project, sweverett, that will grow into your report for SULI. I suggest you take your latex doc containing the corr function derivation (which needs to be checked in if its not already) and extend it in the following ways:
+
+ Add a brief explanation of what `\xi_{+}` and `\xi_{\times}` are, in terms of the ellipticities/shears of the  galaxies.
+ Add a diagram illustrating the contributions to `\xi_{+}` and `\xi_{\times}` from pairs of galaxies (represented by sticks) in various configurations, as suggested by Pat at the last WL meeting.
+ Preface all this with a brief description of the model check you are building up to carry out. I'd start with an abstract that summarizes just this part of the project, then leave the intro blank, and skip to a section called ``Checking the Halo Model'' in which you describe the test that you are going to do.
+
+It's good to keep up to date with the write-up, so you don't have to do a lot of remembering at the end. However, in this mode you do have to be willing to refactor your latex code over time! :-)
+
+Sound good?
+
+I think that since we need the latex math symbols for the correlation plots, we should be consistent and *alwaysuse latex symbols in the plot labels. We have:
+
+ the x-axis label of the corr func plots
+ the catalog plot method(s)
+
+Hi all
+
+StephenRidgway and I are working on the documentation for the white paper, to help people get started. In the first instance, that's you, section leads! :-) Please let us know via this issue thread if you need help figuring out which files to edit, how to compile etc. We made a start in the whitepaper README - feel free to edit this file or any other to make it easier for people to get started editing the white paper. If you include the string "#28" in your `git commit` message, that message will show up in this issue thread. 
+
+Thanks, and good luck!
+
+Phil
+
+connolly Check out Table 3.4.2 \ref{tab:SL:data} (from #19). What else should we include in tables like this?
+
+From rmandelb's feedback:
+
+
+Should 3.4.3 include some explicit words about algorithmic development, or do you anticipate using existing algorithms only?
+
+
+From rmandelb's feedback:
+
+
+
+cdfassnacht It's true, we need to check in with wmwv and saurabhwjha about our dependence on the SN pipelines, if any. Let's revisit these sections and then talk to them. Actually, TBH we should probably make a long list of things to compare with the SN group and schedule some skype time! :-)
+
+From rmandelb's feedback:
+
+
+
+cdfassnacht I'll revisit where we put in Sonnenfeld's "All Ze Lenses" project (and its successors) here. At some point the algorithm that emerges from that work will need to be built into the TJP joint inference framework. Perhaps at the same time that the SN stuff is, too?
+
+From rmandelb's feedback:
+
+
+
+cdfassnacht: I will update the text to clarify this. We will only be ready to set DM requirements after DC1 (and maybe not till after DC2), I think.
+
+Hope this is going well, sweverett! Looking fwd to seeing your plots in #51, once this is done and dusted.
+
+OK, here's a branch for us to investigate hyper-ref stuff (issue #12) and also labelling consistency (issue #11). I've commented out everything except the title page and table of contents, and the SL section. I've made a `\keyproject` command, analogous to `\deliverable`, so that we can use both their numbers in combination, and I started switching the SL content to use this new command. Neither the `\keyproject` nor the `deliverable` has a hyper-ref that works correctly: you click on the highlighted text and it takes you to page 1. Some detective work on the .aux files is needed, I think. As rachelbean noted, it must be something to do with the `\relabel` inputs. Let's use this pull request to figure this out.
+
+This should be useful for connolly when looking for commonalities.
+
+I heard SimonKrughoff had been tasked with this! Let us know when you have an initial version checked in for feedback.
+
+Hey rumbaugh, Brendon merged in a bunch of new code in this commit 
+
+Hi all,
+
+egawiser suggests that we should form a DESC Task Force to look at LSST survey strategy, and its impact on our science. I put in a placeholder statement of intent on the Task Force confluence page, and was thinking about starting a repo until I remembered we already had one! AlexGKim, I assume there are no objections to us using this space to develop a task force plan and then work on metrics together? 
+
+In the first instance we just need to respond to rachelbean's call for task force proposals, fleshing out our line of the table into a short markdown document like this one]( - once Alex gives the green light I'll issue us with doing that. I guess our primary deliverable would be a coherent set of quantitative, DESC-led sections in the [LSST Observing Strategy White Paper. 
+
+If you're interested in working on helping optimize the LSST survey strategy for cosmology, feel free to contribute some thoughts in reply to this message, and either add your name to the confluence page or let me know and I'll add you. And if you are not watching this repo already, please do!
+
+Cheers
+
+Phil and Eric
+
+From anupreeta27 by email:
+
+
+
+Agreed! :-)
+
+From Jeff Scargle:
+
+
+blazars and the production site of the gamma-ray emission"
+by Walter Max-Moerbeck et al. (Caltech/OVRO + )
+
+
+
+
+of lags in cross-correlations between two different
+time series.  I think Eric is correct that there is no
+good study of the relevant autocorrelation (unresolved
+lens) case.
+
+From Greg Madejski:
+
+
+Another one for 3C454.3 is in the  Astrophysical Journal Let. 733, L26
+
+Worth checking out as we start running on unlensed blazars, Nick - if only for the paper introduction.
+
+In the white paper sections, various tweaks to the observing strategy will be suggested, so some brief discussion of what is and is not within our scope might be in order, while we are still getting going. Examples of modifications I can imagine being proposed include: varying the exposure time, adding more sky area in the North, exposing with no filter present, and so on. ivezic, where's the best place to look for our constraints, when speculating about strategies that might improve our metrics? Is it your overview paper? Are there ranges of acceptable parameters that the OpSim team is "allowed" to explore within? I think it would be very useful to see this already laid out in the white paper introduction when we get to Bremerton.
+
+As suggested by cwwalter - some tips for enraged SVN users forced to use git. Thanks for getting this started, Chris!
+
+
+
+Dear all, 
+
+Can you please make a tex file for your section, by copying the template]( called [section-template.tex?  Let's keep the file names simple - just choose a single lower-case string capturing the name of your science case/project. 
+
+Thanks!
+
+Phil
+
+READMe needs tidying up before its ready to be navigated... Open issue here
+
+
+
+Document is basically un-navigable until then
+
+ivezic bethwillman your oral introductions in the White Paper Kick-off speeches sounded better than our current preface! Do you want to maybe edit this piece of text in  to make it work better as some initial guidelines for the section leads?
+
+Key projects themselves are pretty stable now - we just need to define some milestones, cdfassnacht . I'll make a first cut so that we meet Friday's deadline, but let's be prepared to go over them carefully, either in parallel or in response to the coordinators as they review us...
+
+Get on it, saurabhwjha !
+
+As flagged by rachelbean ... How's your latex foo, tony-johnson ? Feel free to reassign this to me if you like :-)
+
+Hi all,
+
+I just finished reading this paper, which they interpret as a gravitational lens time delay of 26 days consistent with the value found in the radio, and a longer lag at 76 days that they suggest might be a quasi-periodic flare repeat timescale. 
+
+This means that the TimeBombs model is close to what they would assume, except that they would allow the magnification ratio to be different for each flare! Indeed, they claim that the strongest flares are associated with microlensing caustic crossing events, which would have Pacynski-style profiles instead of our spikier flares...
+
+I think we want to see:
+
+the "observed" lightcurves
+the underlying "true" lightcurves
+the inferred hyperparameters (dt, mag ratio, other hyper pars) in a triangle plot, with the true parameters marked where possible)
+
+all on the same page, one page per system, with the name of the system in the title of the top panel. This is so we can start to make sense of the inferences in the context of how they fit the data. If you can fit the ACFs (and posterior predictive check ACFs) on as well, that'd be great. You can use gallery.pl]( in [scriptutils to compile plots into report cards, all in one giant PDF file for us to look through.
+
+Blandford asks, how do the results (and in particular, their significance) change as the lightcurves gets longer? How much would it help to get more data on PKS1830, for example?
+
+In 10% of simulations, the true time delay is in a region of very low posterior density. This does not smell right - perhaps the chains are not converged? narumbaugh, in one or two of these problem cases, does changing the DNest control parameters improve the sampling and provide non-zero posterior density at the true point? Can we auto-test the chains for convergence, eggplantbren ?
+
+Hey rumbaugh, a number of people at SLAC (Blandford, Charles, Madejski) suggested looking at the B0218 lightcurves in the different energy bands. The argument is that if our simple single time delay model is correct, then the same time delay should be inferred from each band separately. To do this properly we would need an energy-dependent flare model and then fit the photons individually, but let's first look at the different bands first!
+
+jchiang87 can you check out the publically-available monitored source list please? We're after 1-day sampling or better, as many blazars as we can find, and lightcurves available in more than one energy bin, in order to train our flare model. If you can design a suitable training sample, rumbaugh can download the data and run the no-lens model on them.
+
+Let's compare a lens model (N flares, time delay and mag ratio free to vary) with a no-lens model (2N flares, time delay fixed to zero and mag ratio set to 1, or zero), via the evidence. eggplantbren, can you please advise on how to set delta function priors on the lens parameters - or, really, how to implement the non-lens model efficiently? This need was flagged up by the Fermi science group at SLAC when rumbaugh gave a lunch talk here today.  
+
+Will you enoble him in this way, please eggplantbren ? His GitHub username is narumbaugh !
+
+We need one. First task: write abstract. Second: describe model. This second task can be completed before the first one! Hence assignment to eggplantbren :-)
+
+We need one. What is the functional form of the flares? What prior PDFs are assumed for their parameters? What are the flare hyper-parameters? We need this all written down in latex. Do you have this to hand, eggplantbren? I made a "paper" directory but didn't put a latex file in it. I'll issue that too!
+
+Let's make a triangle plot showing all the hyperparameters for each system (time delay, mag ration, and the rest) to look for degeneracies. If there are some, then any new information about the degenerate parameters could help improve the time delay inference.
+
+rumbaugh you might need to make the code and its Makefile a little more flexible. You can always check for an environment variable called "LOCATION" that you insist be set.
+
+Not at all - be my guest!
+
+Possibly many of these scripts have gone stale - need to investigate.
+
+Reviewer's Comments:
+
+This work merits publication after some minor revisions.
+Following the order of the text, my comments (on both form and content) are :
+
+ In the abstract, I would replace "albeit at the cost of a higher false positive rates" by "albeit at the cost of a lower purity", the purity is a quantity well known by the astronomers and I think it makes things clearer here (especially for an abstract).
+
+ The short Section 4 should become the 4th subsection of Section 3 with slight changes in the titles, like :
+
+
+
+
+
+and by adding a word about duds at the end of the introduction of Section 3.
+
+ There is sometimes a confusion between real lensing galaxies and real galaxies chosen to be lensing galaxies in the training set of simulations. For example, in the last paragraph before subsubsection 3.1.2., in the sentence "the simulated image is added to the real CFHTLS image centered on the lensing galaxy", the authors should write 'lensing galaxy' between quotes or rephrase it : "..centered on the galaxy chosen to act as a lens". The same remarks applies to other occurrences in the same paragraph (and maybe others in the rest of the text).
+
+ The caption of Figure 2 should be completed : "Einsten radius and total magnification distributions..."
+
+ Last paragraph before subsection 3.3, first sentence, I would precise : "We produce catalogs with lens and source properties for each of the three types of SIMULATED lenses."
+
+ There is sometimes a confusion between the (evolving) posterior probability after each classification and the final posterior probability after stage 2, and both are noted P (even if I understand that somehow this is the same quantity). Maybe the authors could note the final posterior Pf and/or be more specific in the text. For example, in the caption of Figure 4, or, in subsection 5, paragraph 3, line 5 : "Each subject, after Stage 2, has a FINAL posterior probability P".
+
+ In Figure 4, there should be a better color contrast between the new candidates and the known candidates to make the results more readable.
+
+ Page 9, subsection 5, 4 lines before the end of paragraph 2, I would precise "In stage 1, ..." before "...those images which cross these threshold values are 'retired'"
+
+ Maybe the authors should re-explain (Paper I) quickly at this stage of the article (3rd paragraph of subsection 5) that the stage 1 favors completeness while the stage 2 favors purity of the final sample.
+
+ Subsection 6.2, paragraph 3, penultimate sentence, I would precise : "...the atypical color and structure of the LENS galaxy"
+
+ At the end of subsection 6.4., as well as in the conclusion, the authors quickly deal with the subject of the deflector subtraction. I would like them to make clearer in their article that this is not a trivial issue in the detection of galaxy-scale lenses, and that solutions are being actively sought for a better subtraction of this foreground light.
+
+ There is sometimes a confusion between the various subsamples considered in the article. For example, in Subsection 6.5, paragraph 2, lines 4-5, it is hard to distinguish in the text if the "known" samples considered refer to confirmed lenses or the whole candidates.
+
+ In subsection 6.5, describing Figure 7, could the authors say one word about the few points at lower image separation which are not consistent with the "total" profile?
+
+ There is some overlap between Section 6 and Section 7, even if the developments are interesting. But maybe Section 7 should be somehow shortened for clarity?
+
+ The title of subsubsection 7.3.2. "Blind lens search" seems a bit too general and maybe not relevant. It should be replaced by something more specific like "Lens positions in the image cutouts".
+
+ In Figure 11 and its description in the text (subsubsection 7.3.3, paragraphs 4 and 5), the distinction between the red and green curves is unclear, especially for what concerns the detected lenses. There should be a word about it in the caption of the figure too.
+
+ Subsubsection 7.3.3, paragraph 7, I think there is a mistake in "i) The ratio of large positive kicks to small positive kicks for the detected sample is higher than in the missed sample"... I think the authors meant "negative" instead of the second "positive"?!
+
+ Last paragraph before Section 8, I would again replace "increase the rate of false positives" by "decrease the purity".
+
+ The authors could mention EUCLID with the other future surveys in their conclusion.
+
+Reviewer's Comments:
+
+This work merits publication after some minor revisions.
+Following the order of the text, my comments (on both form and content) are :
+
+ In the abstract, "expert-classified images which lack lenses" should be replaced by something like "real images that lack lenses" or "observed images that lack lenses", talking about "expert classified images" when referring to non lenses seems a bit confusing.
+
+ Page 9, 4 lines after equation (2), "Nx is the number of lenses the volunteer has been shown" should be replaced by "Nx is the number of training subjects of the relevant type the volunteer has been shown", since it can refer either to lenses or non lenses.
+
+ Page 9, I do not think it is necessary to create a specific subsubsection 4.2.1 to present the examples, which can be presented in the rest of the text of subsection 4.2.
+
+ Page 10, maybe the title of subsection 4.5 : "Practicalities" should be changed for a more specific title here.
+
+ Page 11, Figure 5, the figure is interesting but it should be better highlighted with clearer color contrasts, for the histograms and for the circles. Issued as #219
+
+ Page 12, Figure 6, the different linestyles should be replaced by different colors to make the whole plots more readable, and to be able to distinguish the 4 "stars" corresponding to a lens probability threshold of 0.95 in each case. Issued as #220
+
+ Still for this figure, in the caption, "Lens probability varies along the curve" should be replaced by "Lens probability threshold varies..."
+
+ Page 12, in the caption of Figure 7, the authors should add a sentence about the inset as in the caption of Figure 6 : "The inset shows a magnified view of the bottom righthand corner of the plot".
+
+ Page 12, subsection 5.1, paragraph 5, line 9, I would replace "If the training set samples from the same systems as the test set" by "AS the training set samples..."
+
+ Page 15, last paragraph before Section 6, first sentence, there is a repetition of "between".
+
+ Page 16, subsection 6.1, I would write the first sentence of the 3rd paragraph: "The false positives show similar behavior.." at the end of the second paragraph, and begin the 3rd paragraph with "As well as subjects being 'unlucky'...".
+
+ Page 18, the last paragraph of subsection 6.2 quickly deals with the subject of automated lens searches. I would have liked to read more development on that subject, which I could find though in Space Warps II. Nevertheless, I think the authors should at least add a sentence or two about it in their conclusion, maybe by completing the last indent of Section 7 concerning the missed lenses.
+
+ Page 18, I think the title of subsection 6.3 : "Increasing capacity" should be changed to "Increasing crowd capacity" to avoid confusion.
+
+ Page 18, subsection 6.3, 1st paragraph, line 7, there is a 'typo' : "quantitively".
+
+ The authors should add a discussion about the complexity of computing of a selection function in the case of visual inspection compared to the automated methods.
+
+Hey cpadavis,
+
+As I said just now over tea, opportunity knocks! Can you prepare a list of CFHTLS stage 1 subject Zoo IDs for everything you'd like stage2-classified please? We're resurrecting the website this summer to give the crowd something to do after reading about our CFHTLS papers, and it's a good opportunity to try and find a few more lenses based on your eSWAP analysis. See #214 for the whole plan!
+
+ In the eSWAP paper latex file, make very brief, itemized notes on the questions you want to answer, defining terminology for the various samples you want to investigate following the stage 1 offline SWAP runs you have already done. 
+  Make the samples, writing out the Zoo IDs (and any other useful information you want to keep together) to some clearly named plain text catalog files.
+ Ship these samples to Anu, along with instructions as to which sims and duds you want re-activated as well (I think you said that all of them was better than some of them, and you wanted the stage 1 training set not the stage 2 one - to include the lensed quasars).
+ It sounds like the CFHTLS Stage 2 classification interface is the one we should use to do this refinement exercise, but we can discuss this here.
+
+Thanks for taking care of this before you go off on tour for three weeks with the Stanford Jazz Orchestra! We'll keep in touch via this issue thread. Have fun!
+
+Phil
+
+Hey tony-johnson, can I remove `srm.pdf` since the latest PDF is always visible on confluence? I worry that we will fill up GitHub with all our large binary commits.
+
+This is also the Elevator Pitch rehearsal! You'll need to remind the group what our project is, before giving them an update.
+
+This is to enable meaningful, general overlays of catalog objects on `WLMaps`.
+The positions in Stefan's catalogs are in physical coordinates relative to the corresponding weak lensing maps - so we'll need to use the right map to do the catalog coordinate transformation.
+
+For reference: each field (map) is 4 by 4 degrees, and each catalog is a 1x1 deg patch in that field. In the catalog filename GGL_los_8_7_7_3_3_N_4096_ang_4_*.txt, the field is (7,7) and the patch is (3,3). Let's choose the WCS center to be the center of field (0,0). In total we have 8x8 = 64 fields (1024 square degrees!), each containing 16 patches/catalogs. 
+
+This means we need a method to parse Stefan's filenames to extract the world coordinates (Ra, Dec) of the map field center. Since all his maps have the same size and pixel scale, we can carry on hard coding these in the `read_binary_data()` method. When we start working with other sims we'll add more io methods anyway.
+
+Let's plot a piece of the foreground catalog on top of the convergence map. The clusters of galaxies had better lie on top of the kappa map density peaks! Take a look at how the `Lightcone` objects plot themselves - some of those functions might be able to be extracted into separate `def`s and re-used from the `ForegroundCatalog` class (as well as from the `Lightcone` class).
+
+I think this is my problem: `ipython --version` returns 2.2, and from some googling it looks like ipython made a breaking change at version 3.0 that causes this error. I am updating my anaconda ipython by doing:
+
+
+
+
+DESC is defining a set of Taskforces to take on "specific high-priority and timely DESC-specific projects" - that seems to fit our description, so let's submit a proposal to the DESC mgmt. We'll need to start answering the call for proposals via some sort of shared doc (a markdown document on here), link it to the relevant confluence page and then iterate. I'll make a start. Comments welcome via this thread!
+
+Add all of them in now as subsubsection headings, so that everyone can see them in Thursday's meeting!
+
+tcollett, is the repo missing a file? I am running the example, which runs fine (in the wl branch, using astropy tables!) until line 239 of `Drill.py`
+
+>
+Drill: All 1000 calibration lightcones made.
+Drill: Reading in observed catalog: /Users/pjm/work/stronglensing/H0/lightcones/Pangloss/example/example_catalog.txt
+Traceback (most recent call last):
+  File "/Users/pjm/work/stronglensing/H0/lightcones/Pangloss/Drill.py", line 239, in <module>
+
+  File "/Users/pjm/work/stronglensing/H0/lightcones/Pangloss/Drill.py", line 201, in Drill
+
+  File "/Users/pjm/work/stronglensing/H0/lightcones/Pangloss/pangloss/io.py", line 59, in readCatalog
+
+IOError: Cannot open /Users/pjm/work/stronglensing/H0/lightcones/Pangloss/example/example_catalog.txt
+
+Add paragraph to introduction?  Summarize mass modeling degeneracies (including mass sheet, source position), and how these can be broken with good data constraining flexible, physical models. High resolution imaging is one part of this (dynamical mass, and environment/LoS information the others). Cite papers by Schneider and Sluse, before Suyu et al (2014). And we must thank Peter Schneider in the acknowledgements! :-)
+
+We need a bit more flexibility with our catalogs. We're going to want to start generating catalogs of weakly lensed background objects from scratch, and then compare them with catalogs of background objects weakly lensed by catalogs of foreground objects - and then at some point we'll need to cope with Matt's Dark Sky data rather than Stefan's Millennium Simulation data. So, let's put all this in a `Catalog` class, and give it some useful general methods before subclassing it to handle foreground and background objects. 
+
+The `readCatalog` function in `io.py` can be the initial `read()` method of a `Catalog` class, I think - we can add a kwarg for `source=Millennium` later. I guess each `Catalog` object will need to contain an astropy table called `data` so that we can pass just this as input to `Lightcone` (for example). Then, the `Catalog` base class will also need to be able to `write()` itself out (using some standard `astropy` call), and also `generate()` itself - just drawing world coordinates on the sky (RA and Dec, in standard units (rad?)).
+
+Then, we can make `BackgroundCatalog` inherit from `Catalog`, and extend the `generate()` method to include adding galaxy shapes as well as sky positions. To check that the catalogs make sense, we'll need to give them `plot()` methods showing sky positions and then distributions of generated (or read-in) quantities. 
+
+Let's not upgrade the `Lightcone` class for now, so that we don't break the top level scripts that tcollett and charlottenosam wrote - but I'm mentioning them here so that they can follow along with this upgrade in the `wl` branch, and give feedback if they spot any potential pitfalls!
+
+Let's sub-class the Kappamap and enable commands like:
+
+MSgamma = pangloss.Shearmap('gamma1.fits','gamma2.fits')
+gamma_hilbert = MSgamma.at(x,y)
+
+Tricky things will be: having the superclass understand what to do with two files, then two maps. 
+And I guess Shearmaps should be able to plot themselves, with red sticks plotted at the vertices of some downsampled grid. (Also sub-plotting, we'll need that :-))
+
+Deadline: Wednesday July 1, 10am
+This key project needs a name. We discussed estimating kappa_ext using mock catalogs made from a range of cosmologies, and comparing Pangloss reconstruction and H0LiCoW number counts head to head. Is this an *environment challenge*, cdfassnacht?
+
+Deadline: Wednesday July 1, 10am
+
+
+Deadline: Wednesday July 1, 10am!
+
+
+Deadline: Wednesday July 1, 10am
+
+Still to do:
+
+ Update README to reflect "as-is" unsupported code release
+ Provide hyperlinks to Auger papers in README
+ Add header to all code files listing license and citation instructions.
+ Get group to sign off 
+ Merge this pull request
+
+In the beginning we discussed having a pre-workshop remote MAF tutorial session, like last year's dry-run, to get people ready to come to Bremerton and code. Will we be doing that again this year? If so, do we need to do anything before the kick-off telecon? I guess the section leads will need to be familiar with MAF - or at least, have people that are, that they might want to send to a dry run.
+
+We're meeting Wednesday 9am PDT.  Will you send a reminder, cdfassnacht ?
+
+Remake the plot on our whiteboard in python. This means first making the code in #1 work! 
+
+Hey cdfassnacht, let's put our SL content in this SL branch while we hack it together. I'll git pull from master every now and again so we don't fall behind. I made a tiny start on `sl.tex` , just defining `SLFinder` development as a key project and then looking to transcribe its milestones from our whiteboard at 
+
+I got a bit distracted by the `\keytasks`, which was silly because we don't need to define those yet. If you think one key project per coding project (with deliverables associated with preparing for, constructing and then analyzing each DC) makes sense, our program would then be to add in/complete subsubsections for each one, starting with DC1. We can this past the WG on Weds.
+
+Let's keep this PR open until we have all these key projects and milestones in place - merging it back into master will be us delivering by the July 10 deadline...
+
+Based on the SL experience so far, we're all going to want to draw our own group's Gantt chart to help us put together our pieces of the SRM - and we will all need to start with the same LSST project milestones, plus the DC1/2/3 set up defined here. This means that we need to share the same *codefor making Gantt charts, to avoid mismatches between timelines (and to allow changes in the DESC-wide timeline to be propagated cleanly into the individual charts). And since we all love python, let's make our Gantt charts in python! :-)
+
+This branch is for the development of DESC Gantt chart python code. I found a good-enough starting point, a class called `googlegantt.py` that uses the Google charts API to do the plotting. We can replace that with matplotlib calls reasonably straightforwardly, and for now the Google API works well enough. Most importantly, the Gantt chart and category classes are nicely designed, meaning we should be able to sub-class into  DESC_GanttChart easily, and then add our WG tasks in standardized fashion. Take a look and feel free to take on any of the coding - I think this could be fun. 
+
+PS. I say: no-one merges the pull request until we have at least two WG Gantt charts checked in!
+
+
+
+
+
+Here's a bug for you:
+
+This link takes you to the SpaceWarpsRings demo that we are trying to impress some customers with:
+
+
+
+However, in my "build a project" page, when I click "view" on the Space Warps Rings project, I am pointed to this  link, which does not work:
+
+
+
+
+
+I guess the code should lower-case this URL before using it?
+
+StephenRidgway wrote: 
+
+
+
+If there is not one, we need to make one. Assigning this to ivezic so he can re-assign to the right person!
+
+ Update the chapter template
+ Discuss with SOC
+ Make amendments
+ Start a skeleton white paper, closing issue #3 
+ Sketch subsections of TDC section, with very brief notes on what could go where.
+ Discuss with SOC and other section leads
+ Make amendments, ready for fleshing out section
+
+
+We can write this here, on Monday.
+
+A plain markdown file awaits us, here!
+
+
+
+As well as signing up the section leads into the team]( ivezic needs everyone's email address so he can contact them directly (to arrange a kick-off telecon with them). Best is to send them to him via email! I'll extract the names from [the white paper design page and make a start.
+
+Here. Deadline: end of Friday June 12!
+
+Don't merge this yet, please - I'll make all my edits and then you can merge when I'm done (and when I've fixed all conflicts, too :-). This thread should show us all my commits, so you can follow along with the changes I am making (or suggesting).
+
+Just a straight swap. Can you merge this in and update the web app please, chrissnyder ? Thanks!
+
+Things that will need doing before ~Friday 24th July:
+
+ List of "unlucky" CFHTLS Stage 1 subjects (those with the fewest big kicks) from anupreeta27 
+ Offline candidates from cpadavis  
+ Resurrect one set of CFHTLS sims and one set of CFHTLS duds (~450 subjects each) anupreeta27 
+ Re-ingest this subset of the CFHTLS stage 1 data chrissnyder
+ Ingest any new sims required? N/A!
+ Adapt about page to include note about "testing" drphilmarshall
+ Check that results pages and spotters guide etc are propagated/merged in properly drphilmarshall
+ Bring landing page back to life, with appropriate link text
+ Make changes related to feedback, as there won't be feedback on the harder sims. N/A!
+ Consider the sim frequency for the easy vs. difficult sims and decide when should harder sims should  appear in the classification history. N/A!
+ Fix css of landing page chrissnyder ?  
+ Fix FAQ chrissnyder ? 
+
+Or at least with text that doesn't persist once you start typing! But I think most search boxes on the internet are empty to start with.
+
+Hi Simeon! Great talking to you at coffee at #cosmomlstat just now. If Gadget3 is GPL-licensed, do your fs-neutrino patches need to be as well? Even while Gadget3 is not publically released?
+
+An interesting possibility: if we rebuild Space Warps using the Panoptes front end, the Spotters Guide will be provided by us as a markdown document, displaying the images and text that we want. It _might_ also be possible to embed a javascript lenstoy instance in that file - here's a promising looking stack overflow thread: 
+
+
+
+We'd like to emulate Space Warps' high speed classification system, which is basically a drawing workflow with no "end of classifications step". The link to the subject's Talk page would be available throughout the classification step, in order to enable one-click rejection of boring subjects. In a rare object search we want to be able to do something like:
+
+Next! Next! Next! Next! Next! Next! Next! Next! Next! Ooh, click on that - now, Next! Next! Next! etc
+
+cc: aprajita, anupreeta27
+
+To enable sim catalogs to be made in other parts of the sky.
+
+I found myself adding the word "lens", both when updating the repository README and also the latex. What do you think? Are we allowed to do this?
+
+In which we define the scope of the review and summarize its contents. Do you want to have a go at this, after checking through my brief section notes?
+
+
+
+Let's:
+
+ Add some explanatory text
+ Rename the notebook from `testing.ipynb` to `ColoredCatalogs.ipynb`
+ Perhaps make some plots, showing where the lenses (orange points) and images (cyan points) are in some interesting color space,  (g-r) vs (i-W1) perhaps?
+
+Asking for one referee, and publication side by side.
+
+From skype earlier:
+
+3381 candidates, abstract and Table 2
+'Stage I' not 1
+Candidate numbers in speed section
+Put purity in context - how good is 30%?
+Offline ignores 1st N classifications - what is N?
+Figures in correct order?
+Remove information column from Table 2?
+
+
+Pangloss needs a demo notebook, showing its basic operation and making some explanatory plots. This could then be copied and extended into a Pangloss WL demo by sweverett (as suggested in #29)
+
+We need an outline of a summer project for sweverett . Let's make a wiki page, and some related issues.
+
+
+
+Started reading through suggesting re-wordings etc, I'll let you know when I'm done! Feel free to dispute/merge as I go :-) First commit was some abstract re-wordings.
+
+Visual checking of all 1 and 2D marginalisations of the prior PDF and its GMM approximation is a necessary but arguably not sufficient condition for us making an accurate inference of the halo properties. For the senior thesis I think we just want to avknowledge this, and assign it to further work. For the paper, we might want to think of some additional integrals that could help us convince ourselves that our approximate prior was good enough.
+
+Preferably as bullet points, maybe even to enable a line by line comparison with Gonzales. 
+
+We write in paper 2 section 7.3.1:
+
+"Surprisingly, most of the lenses in the known sample have few classifications (Nclass<10) which includes both the detected and missed lenses."
+
+But then we say:
+
+"Overall, we do not find any correlation for the detected and the missed sample with Nclass."
+
+I think these statements need clarifying in order to be consistent. Correlation between what and what?
+
+Could people be going straight to Talk rather than marking the image, when they see a known lens? This could be tested with a future Talk comment text analysis.
+
+In the test in Paper 2 section 7 where we only use classifications with \Delta log P > 1.2:
+
+Is there a typo, or do we really ignore all negative kicks?
+What's the False Positive Rate with this cut? You can reach arbitrarily high completeness if you are willing to let the purity decrease to very low levels.
+
+Also:
+What fraction of classifications are retained with this cut?
+How many subjects don't get any classifications at all with this cut?
+How many unique agents contribute to the final sample?
+
+The DES SL group might ask: could we use a CNN to select targets for Space Warps? To what purity does  the FPR at 90% TPR correspond? Could we have a CNN look at _all_ galaxies in the DES, and return a manageably small sample of strong lens targets for visual inspection?
+
+A crowd of 40,000 classifiers leads to an agent-based SWAP model with 80,000 parameters. This is a huge parameter space. The problem factorizes extremely well but still - its a lot of dimensionality. By including an assumption that the volunteers are drawn from a population whose agents' confusion matrix element distribution might be described by a smooth multivariate function (perhaps a Dirichlet distribution?), this parameter volume might be reduced - and on top of this, the noisy inferences about the low experience classifiers could be regularised by our knowledge of the crowd as a whole. There _might_ be gains to be made by reducing the noise in the system in this way. Could be worth thinking about, especially if its a simple additional term in the log posterior being fed to the offline EM engine. (I don't know how the online analysis would implement such a _hierarchical_ model of the crowd.)
+
+Once we know the storyline, we need an abstract. (You could also write an abstract before figuring out the storyline.) This can be _aspirational_ at this stage!
+
+To be implemented as section headings, brief notes - to help plan the remaining investigations.
+
+
+Hey chrissnyder : the CFHTLS/discoveries.eco code looks good to me, but it fails to display properly (as reported in #265).  Any help you can give us would be greatly appreciated! :-)
+
+When is this going out, ivezic? If you have a date in mind, you could update the corresponding milestone.
+
+We need one. connolly made one for the UK cadence workshop using Google docs, and embedded it in the meeting webpage, check it out. Should we be pointing people at the main project and community meeting website for registration, ivezic, or should we make our own registration page like Andy's?
+
+Here's a text file
+
+Copy this from UK Cadence Workshop web page!
+
+In second week of June, for us all to get on the same page. 
+
+That's this one
+
+The primary results overview is given on the web app at  - but we can host additional things on our team gh-pages website at  How about the following:
+
+ SpaceWarps/analysis/projects/CFHTLS/index.html for a brief overview of our results, blog/press coverage, etc.
+ ] SpaceWarps/analysis/projects/CFHTLS/candidates/ to host an index.html overview, plus various tables of detected candidates. Nicely formatted PNG images are already checked in [here
+ SpaceWarps/analysis/projects/CFHTLS/atlas/ to host the catalog that cpadavis  and aprajita are making, with an index.html showing a few example images, and then the link to the tarball. Probably the catalog itself should live at SpaceWarps/tree/master/analysis/projects/CFHTLS/atlas, following anupreeta27 's organisation scheme, but the index.html in this directory can host links to that area at github.
+
+Then we need to 
+
+ Update SpaceWarps/index.html to point to these new pages.
+
+cpadavis if you're ready to start putting up a page to host the atlas, please do go ahead and check in an index.html. 
+
+I suggest that when working on our webpages, we push to master as we go, and then when we're all happy with how things look in a local view of the page (on a mac, just do `open index.html`) and are ready to advertise more widely, we can merge the pages into the gh-pages branch to "launch" them. 
+
+To be checked in and filled out by each of us. 
+
+x] [Phil
+x] [Leigh
+x] [Chris
+
+After first committing and pushing them!
+
+The STRIDES group were discussing how to combine their "expert grades" for ~100 lensed quasar candidates this afternoon. I suggested that we had solved this problem with SWAP (although we did not apply it to our own expert grades!). On the STRIDES dime, then, I could:
+
+ Adapt SWAP to read in a csv file of expert grades, as output by a spreadsheet, and reformat it into a classification "database"
+ Figure out how to translate each expert (0/1/2/3) grade into a LENS or NOT fractional vote
+ Run, comparing offline/online, supervised/unsupervised etc
+
+In the first instance, I guess offline and unsupervised will work best (if only because we don't have any classifications of training images!) In future though, the team seemed amenable to having training images mixed in with the candidates, which I thought was interesting.
+
+cpadavis: it occurs to me that the above could potentially make a nice introductory example to the eSWAP analysis. Comments welcome!
+
+Anu tells me that MNRAS submissions need to be less than 10Mb in size. Try remaking the crowd plots with smaller figsize! The other files are OK now, I think.
+
+I knew something wasn't quite right! Somehow the $tabbackground color isn't being used on the background tab labels. Here's what they should look like, from the guide:
+
+!image
+
+I am so bad at reading css, I couldn't figure out how to change this, sorry!
+
+I am trying to make a `candidate-list` to display the 5 VICS82 candidates, but am failing to pick up the css formatting:
+
+!image
+
+This should be easy to fix either before or after you merge in #269...
+
+Currently I have this, in 
+
+
+
+
+
+
+
+Which, depressingly, leads to this:
+
+!image
+
+I'm doing something wrong with those `div.` things. Can you help, please chrissnyder ?
+
+Here's what I get when I navigate directly to 
+
+!image
+
+Something's not working with the `class: show` command I'm trying to give in `app/views/project-results.eco` - I think the discoveries tab should be the landing one. This is a pretty urgent issue: we posted the link above in our papers!
+
+We are half way through #265, but #263 is done. The VICS82 summary and discoveries can wait a little while - next we will try and make a better image gallery, using anupreeta27's new annotated cutouts. I found one or two other little issues while doing this, Ill write them separately. Thanks chrissnyder !
+
+A theme that came up in our CFHTLS papers was this very simplistic assumption of time-constant skill (AKA "talent") that the SWAP agents make. An interesting test we could do as part of the eSWAP analysis could be to experiment with estimating PD and PL via a boxcar average over a moving window of N classifications, for various values of N. I think this could be an easy extension to the SWAP code, what do you think, cpadavis?
+
+tcollett suggested in #23 that we formulate a toy problem that we can use to explore the computational feasibility further. This thread is for discussing that idea.
+
+
+
+Because latex math is easier to read than ipad notes.
+
+davidwhogg can you write a short document outlining this project, and the hypothesis that you and aimalz are going to test, please? I guess aimalz could also take over after you have written the abstract, and then maindoc could introduce a specific solution to the problem and the tests performed. The reason I ask is that I heard that Jean Coupon is also working on photo-z ensemble inference, so it would be good for everyone to know what everyone else is doing. I don't know if he is working in the open or not but you could ask him in an email that points him at this repo, once there is something for him to read!
+
+Hi Alex! Just checking in. Looks like this project is coming along :-) One thing that will help me follow your progress is a README file with some brief introduction to the project and what you are currently focused on. This is really helpful to let other people know what you are working on, so they can cite you! 
+
+In that README you should post a link to your notebook, displayed in nbviewer. Check this out. I notice that your plots don't show up in that notebook - you can fix this by adding something like 
+
+
+
+at the top, with the import statements.
+
+
+
+I talked to chrislintott about cpadavis' eSWAP work today - he's very interested in the problem of how to improve the probabilistic analysis, and design task assignments (which classifier should we show this subject to?), in order to optimize a citizen science project. I think this will make a good context for a Human Computation paper on the extensions to SWAP that cpadavis has been exploring (training on all subjects, offline vs online etc). It will also help focus the program towards the next Space Warps project, where we hope to improve our efficiency by a factor of three by doing the analysis in real time, and perhaps also do some dynamic subject allocation on the basis of the results (building on anupreeta27 's kick analysis in Paper II, for example). Let's use this thread to discuss this! aprajita anupreeta27 and I have tossed around ideas for reducing the false negatives for a while now, and can probably suggest some more good eSWAP experiments to do on the data we have already.
+
+chrislintott can you say something more about how you think about project optimization, and suggest a very short, focused reading list to give us an idea of where the eSWAP paper will sit in the literature? Thanks!
+
+Hi all!
+
+I'm sorry I missed the meeting, but it looks like this is going to be a very interesting and valuable document. I have some comments on the conclusions that hopefully will help with the rest of the paper (or at least make interesting reading! :-)
+
+Best wishes,
+
+Phil
+
+In conclusions 3 and 7, citizen science is described as "useful" and "a tool". I think CS is best described instead as a methodology, since citizen science IS science. Describing it as a tool implies that we are using it to achieve an end, and one might wrongly infer from that that we are also using the citizen scientists. This is not the case: we are collaborating with them!
+
+Conclusion 6a: while I agree that the typical interface used by astronomers is not necessarily best for volunteers, can we not claim that designing interfaces for both astronomers AND volunteers is going to be the best strategy? The problem with restricting citizen science to simple custom interfaces is that it makes it harder for citizens to graduate to more free-form investigation, while on the astronomer side, the good design of citizen-friendly interfaces should reduce the training time for starting professionals too... 
+
+Conclusion 10's mention of a shop window reminded me of a recent thought about how the EPO efforts of scientists and their project teams can be usefully thought of as advertising to attract more citizens to come and contribute to the science. I like to think of EPO teams as HR departments! This thought is useful because it highlights the distinction between citizen science and outreach: outreach is what you do to engage citizens who might become citizen scientists. 
+
+We need to reduce the size of the paper 1 figures by a factor of 10 before arxiv will accept it.
+
+From anupreeta27 :
+
+ "It looks like all the individual figs made in Paper I have very large dpi making each fig >100K. Since its not easy for me to regenerate all figs, I suggest you do this with the default dpi value in the matplotlibrc file for savefig.dpi. This is certainly good for PDFs that I made for paper 2." cpadavis, can you remake your figures with 100dpi PDF if they are not already, please? I will do the same.
+
+x] "Some of your pngs are also very large. The screen-grab png is 1Mb - for comparison- this is equivalent to the size of ALL of the figs from Paper 2.  Please reduce the png sizes and possibly convert them to PDF. Also, you have several loose pngs (each of ~400KB) in a single fig (e.g. fig.2,3,13) - this increases the fig size by several factors - for comparison - 3 such pngs combined into a single pdf gives me ~300KB (see fig 1 of Paper 2). You can convert this with [the same script I used to read an array of pngs and combine it to a single pdf." I'll try compressing the pngs into jpg, etc. I have played this game before...
+
+ "A suggested reasonable size for a fig on arxiv is 50KB and most of my figs are under 20KB except when showing CFHTLS images. Since I don't know any other specific upper limits, please make sure that the folder sw-system-figs is not too large than 1Mb because this definitely worked for paper 2."
+  
+ "One more thing  - ":" are not allowed in filenames. I had fixed this locally during submission. Could you please rename some of your pngs by replacing ":" with "_" ?" 
+
+
+Short preamble, followed by arxiv link to Geach et al. 
+
+ Move VICS82 results to VICS82/Discoveries
+ Re-instate standard homepage (from some other branch, probably CFHTLS_stage1)
+
+At the moment it's just a div. Shurely I can do better than that?
+
+Rough suggested plan:
+
+x] Copy in the "here's what you found" content from [home.eco
+ Make it translateable
+x] Hack a `candidate-list` class into the [discoveries.eco]( page, like the one currently in use in [home.eco
+ Fill code with G > 2 CFHTLS candidates from paper 2 (just need ASW IDs)
+ Remove observer IDs
+ Make each image a hyperlink to the corresponding subject page in `Talk`
+ Submit pull request
+
+
+Think we need some fresh air between the two tab bars, and before the text starts, what do you think chrissnyder ? Here's how it currently looks:
+
+!image
+
+
+Just paste in titles and abstract of papers?
+
+Oh snap, chrissnyder!
+
+As suggested by Prasenjit!
+
+We are submitting two papers about the CFHTLS project to the arxiv on Weds (April 22) and would like to include the URL of the page showing all the CFHTLS project contributors usernames, please! You made this for VICS82 a few weeks ago ( #259 ), now we need the CFHTLS ones as well please. I think you can get the list from all classifications with survey=CFHTLS (or perhaps project=CFHTLS), or no survey keyword - I think you have done this search before...
+
+The current site shows a version rolled back to some intermediate commit where the "Results" sidebar button takes you to  , which is where chrissnyder started developing the tabbed pages we need. In issue #259 we converged on a tab for each project (CFHTLS first, then VICS82) and then within those tabs, tabs for "Summary", "Discoveries" and "Participants". For now you can put "Coming soon!" in the Summary and Discoveries tabs - its mainly the Participants we need. The "Results" button should take the user through to this area, which is really a projects area. I'd like us to be able to provide links to the URL  from our papers: "projects" is better than "results", so that we can show that SW has served more than one survey team ("results" sounds a little final).
+
+We'll also need to put up images of the CFHTLS candidates, and a summary of the project, but these can be separate issues. Which branch should we be working in? Is it time to merge back to master?
+
+
+
+While we discuss the details of the inference in #23 , I think it's clear that to predict weak lensing data and evaluate our log likelihood we will need to be computing the lensing effects (gamma, kappa) of ~100s of halos on each source, for 10^5 sources per sq deg in under a second (to keep our lives sane). I started wondering about fast methods to do this computation in parallel like Map/Reduce - my limited understanding from half an hour's reading is that some databases may enable this automatically/by design.
+
+So, I'm thinking that we are likely to want to do this project with some sort of actual database, preferably one sitting on top of thousands of CPUs!. Since the importance sampling could, I think, be a very general use case of an LSST object catalog that contains interim posterior samples of things like galaxy shape and galaxy photo-z, I'm thinking about boiling this problem down to its simplest possible pseudocode and plain python/everything in memory demo, and then getting in touch with Jacek and KT at SLAC to see if they want to collaborate. 
+
+Thoughts?
+
+Hi edwinrobots ! We'd like to cite your IBCC paper please - can you give us the correct bibtex entry please? I put a placeholder in doc/references.bib for you, should be easy to fill in the gaps. Thanks!
+
+
+
+It seems that supernovae in catsim are still a ways off (right SimonKrughoff ? #13) so how about we make a simple extension to the Sprinkler, so that it can make mock supernovae as well as mock lenses. These can be comically simple, its just placeholder code to allow rbiswas4 to join in and think about how to include realistic simulated supernovae. Probably we should hear from both Simon and Rahul before getting too far down this road. 
+
+We need a team website that can host paper drafts, any atlases, etc. I'll remove the old stuff (spotters guide prototypes etc), and put up links to LensToy and LensWrangler to help with javascript hacker recruitment. 
+
+Since this doesn't appear anywhere else!
+
+Hey cpadavis can you check in what you have on the SW atlas, so we can see how to merge in aprajita's detailed labels? She mainly needs the schema right now, to make sure the matching can be done easily. (Image ID plus pixel coordinates is probably the way to go - but which image ID? etc)
+
+git pull often as Anu is also editing the paper 2 text...
+
+Add a paragraph with the value of some of the individual systems, to section 5. Perhaps re-number the sections so that "New lenses from Space Warps" appears as subsection 5.2 (with a bolder font!)
+
+Originally we made this plot for diagnostic purposes, but it's pretty busy. I think we can mention the results for different lens types in the text, or just defer all that discussion to paper 2, and just show the solid stage 1 all and stage 2 all curves on the completeness-purity plot. The inset is still helpful, since it shows as reaching a particular standard: 90% completeness at 30% purity, You might have to increase the axis ranges a little on the inset to show this though. Woudl you mind making a simpler version and adding it to the repo and latex file with a different name, please? Thanks!
+
+
+
+Needed by #14 
+
+Anyone trying to drop OM10 lensed quasars into images is going to need an input catalog that contains something like
+
+
+
+for each lensed quasar image (as in eg this PS1QLS issue. This needs some sort of `write_sim_catalog` method.
+
+Seems to be in physical units at the moment.
+
+This must be a solved problem by now. Ivezic had a suggestion in his textbook, we could think about tracking it down. 
+
+I added some comments to `demo.py` and used the new filled contours and 68 and 95 credible regions - and then adjusted the README so that it offers the demo up as a chance to start experimenting (rather than reproducing the example shown). I guess really we should start collecting a gallery of examples, matplotlib-style.
+
+Suggestion: Poisson likelihood, flux inference, from 12 photons.
+
+Once dfm has pushed his smoother contours... 
+
+OK dfm, here's a wishlist for those of us using triangle.py to plot samples drawn from PDFs:
+
+ Contour levels that enclose 68 and 95% of the 2D probability
+ Arbitrary levels, why not. (See #31)
+ Optional Gaussian smoothing of 2D PDFs for presentation purposes
+ Ditto for 1D histograms
+ Uniformly filled contours to show confidence regions without being distracted by the actual density
+
+This might take you a while, sorry - let us know when you're done! Thanks Dan.
+
+Aim to have thesis/main.pdf ready to show at group meeting on April 6th. 
+
+ Mass of local group from pairs analysis, cf Gonzales. Consuelo vs Bolshoi?
+ Mass of local group from triplets, but not using M33 kinematics
+ Mass of local group form triplets, including M33 kinematics. 
+ Plot showing three 1-D PDFs, overlaid.
+
+ Mass of Milky Way, same set of constraints. 
+
+ Timing argument masses, in pairs analysis, compared with actual local group mass (sum of MW and M31 masses). 
+
+DIscussion of numerical values and uncertainties - these need extracting accurately from `triangle.`
+ 
+
+I started working through the plan on the wiki, trying to make a clearly defined list of bulleted systematics. When finalized, these might need labelling with numbers or letters, so they can be referred to in the "tests". Or, the tests could be inserted after the description - and then, for clarity, we could provide a simple table at the top of the page with links to the individual systematics further down. Either way, let's iterate!
+
+Note the small additions I made, just trying to clarify the thinking - please carry on with this! The clearer we write about the issues now, the easier it will be being efficient with the tests!
+
+From the first announcement, when it's finalized. 
+
+ Meeting goals need to go into "About" section
+ Initial schedule (or thoughts on it) need to go in "Schedule" section.
+
+Want to have a go at this, lmwalkowicz ? The index.html file is in the gh-pages branch, let me know offline if you need more pointers about where other things are.
+
+
+
+Previously I suggested "SpotterBot" for this machine classifier, because "Bot" has some resonance in the Zooniverse world. 
+
+Any fun name would do though - I am imagining making a Zooniverse account in this code's name, and posting images and comments from it (by hand at first, and then possibly later by automagic). So the name of this code should look good in Zooniverse forum.
+
+I note that the letters "CNN" are contained in the word "cunning" - suggesting the possible name "TheFox." Or, more self-deprecatingly, "Baldrick" (a BBC comedy reference).
+
+
+cpadavis would you mind digging these images up (the originals, without insets) and replacing 0.png-3.png, please? Thanks!
+
+How about we keep "Skill" for the Paper 1 definition, and adopt "Power" for the kick size used in Paper 2? What do you think, anupreeta27 and aprajita?
+
+
+
+To improve consistency between paper 1 and 2. 
+
+The header of `triplet.py` now contains the following comment:
+
+
+
+
+
+
+
+
+I found yymao's code on bitbucket What do you think?
+
+Work in results and plots from #95.
+
+x_1 and c are SN parameters that, in the ensemble analysis, must be assumed to be drawn from some PDF. We can get some idea of how to model that PDF in our hierarchical inference by looking at the scatter plot of all samples from all emcee runs on all real supernovae. This distribution of points will be broader than the PDF for the 'true" x_1 and c values, but it might show us whether we need a bivariate function instead of two univariate ones (ie, we might see some correlation between x_1 and c). We can also plot the posterior means from each emcee run, but this will just make the plot less smooth. 
+
+Note that in the PGM below I made the simplest possible assignment - single Gaussians all round! But then I started wondering about correlations.
+
+!Phil's new PGM
+
+
+
+Hi Tim! 
+
+Warren Morningstar (Stanford PHD student, wmorning) and I are doing some ALMA simulation work, and starting to use this marvelous little interface that you have written. Thank you! For now we are simply using the pip-installed code, but in future it's possible that Warren will want to make some modifications. Thank you for providing such good documentation on how to do this. I have (in time-honored academic style) a question and a comment. First: when the time comes, which of your papers would you recommend we (read and then) cite? We'll put a note in the acknowledgments too, but a citation is worth more. Second: have you considered putting a license file in your repo? At the moment you are both encouraging people to modify your code, but also labeling it copyright - so it might be good to clear that up by adopting the MIT license or something, to make it clear that you are fully open source. I usually put a note on both accreditation and licensing in the README, and other docs too. 
+
+Thanks again for the code! 
+
+Phil Marshall
+SLAC National Accelerator Laboratory
+
+PS. I am visiting Oxford in May. Hopefully see you then! 
+
+Need a section in paper 2 with a recap of paper 1 - can be mostly written now, with details later. Main thing is to make papers consistent - so this could be done as a final step. But anupreeta27 can draft the section in paper 2 already.
+
+Introduction? Conclusions as invitation to collaborate on future projects.
+
+Revisit text and table, think about storyline.
+
+aprajita drphilmarshall Is there any big item missing from paper 2?
+
+
+
+There's a lot of relevant literature out there! We could try and write an introduction as we go, reviewing the literature around large scale density field modeling. 
+
+We can use overleaf read-only links to advertise the paper/thesis as you write it, from the README. Here's Marc's thesis, for example. If you want people to follow along as you write, you could add this link to the README. If we were developing the latex in this repo, we would just point out the link to the checked-in PDF file.
+
+Add some quantitative future predictions for what SW system can achieve for e.g. EUCLID, LSST etc.
+
+These should *alwaysbe in physical units - the scaled offset GMM is just for internal calculation and storage. The contour plots are much more valuable than the colored ellipses diagnostic plot.
+
+Looks like some sort of bug somewhere: the M31 proper motion _velocities_ don't match vDM2012 equation 1 when `python triplet.py` is run.  This is partly because they are including information from satellite kinematics as well, but still - we should be able to get closer than we are.
+
+One option is to use a (v_W,v_N) vector as _data_, instead of proper motions in micro arcsec / year. Do we have these numbers for M33?
+
+I'm on the case.
+
+We have a simple PGM for this problem, but now we need to:
+
+ Expand that into maths
+ Discuss!
+ Translate that in to a latex document, that describes how each PDF might be handled (samples, weighting, etc)
+ Agree on this
+ Make some simple feasibility calculations to see how computationally intensive this inference will be, and how it could be made tractable (eg which parts can be parallelised and how, whether there are any speed-ups that can be made, etc). 
+
+beckermr and tcollett, let's do this together! Tom suggests we attempt to work this through independently and then compare, what do you think?
+
+Is it possible to reconstruct the joint PDF Pr(z,Mstar | photometry) from the CFHTLenS outputs? In an ideal world we'd be provided with not only Pr(z | photometry) but also Pr(Mstar | z,photometry) (perhaps on a 2D grid), such that the product gives us what we need. I think this is a good question for the producers of the  catalogs: let's check their papers for the answer, and then contact them if we can't find it. 
+
+Alternatively, we have some compressed information (Mstar estimates with confidence intervals, plus a tabulated Pr(z|photometry)) that could perhaps be interpreted as above, to give a useful approximation. I'm not sure if this approximation will be good enough for our purposes: it *mightbe. We must test it, if we have to go this route. 
+
+ivezic: what's our timeline for announcing this workshop? We have a few issues to resolve first... At the moment its milestone doesn't have a due date. All milestones need due dates!
+
+Request details as required. Who's on the LOC, ivezic?
+
+CSS might need adjusting too to get the full width effect. One image per section? And what is this Bremerton venue anyway?
+
+Hi rhw,
+
+I'm thinking we could simply send our SDSI sponsors this link
+
+Cheers
+
+Phil
+
+PS. This is a spin-off from #18 
+
+The base repo and charlottenosam 's fork are about to diverge, as we get started on the weak lensing project. Ideally we would merge the code used in the BORG project back into Pangloss, so that any improvements you made relating to magnification etc will remain useable by others forking from the base. tcollett, charlottenosam can you comment on this, please? The minimal solution to this issue would to merge into a BORG branch, which could then accept changes from the WL project while retaining its own structure - but much better would be to submit a pull request to the base repo's master branch, so that we are all on the same page.
+
+(Linked from the super-issue at #18)
+
+Hi Charlotte! Let's put up some minimal wiki documentation about the BORG project, so that people have another paper to read and cite. At the very least the home page needs updating with your project, and you might feel moved to make an additional wiki page besides.
+
+(Linked from the #18 super-issue)
+
+Hey tcollett, do you have comments/queries on the SDSI-sponsored weak lensing / hierarchical inference project described on the wiki here At the very least, we have the H0LiCOW application to consider.
+
+(Linked from the super-issue at #18)
+
+Hi all,
+
+I'm working on getting the Pangloss project documentation in order, in preparation for some new work on fitting the mass model to weak lensing data. This project has some funding from Stanford, but it would be great to continue collaborating with you all. 
+
+There's a few things that need doing!
+
+x] rhw could you check over the [new wiki pages I made, please? The opening paragraph summary is something we could send to the SDSI people as they keep track of the projects they are supporting. #22 
+ tcollett would you mind also reading through the new pages, and add comments and questions? This is probably best done on a separate issue thread, here: #19.
+ charlottenosam It would be great to provide some simple notes on your BORG work on the Pangloss wiki, so that people at least know what to read (and then cite). I've given you push access to this base repo so you can add to the wiki. Here's the issue thread for discussion: #20 
+ Another issue thread: merging back in the code used in the BORG project? Discussion at #21
+x] If anyone has future plans for the Pangloss code, please do add them to the [wiki home page, so we can try and keep track of things! We'll use the wiki to log progress on the weak lensing stuff.
+
+Thanks!
+
+Phil
+
+Possibly needed for surveys whose images vary in depth. GIven a header item quantifying depth, set alpha accordingly with a `--dynamic-alpha` option. This will be survey specific, so more hard-coding in `io.py`. Oh well!
+
+Please see the message below from Alan Stonebraker at ARAA: we have some work to do on our figures! Perhaps we can divide the work between us? 
+
+Dear Dr. Marshall, 
+
+As the Illustration Editor for the Annual Review of Astronomy and Astrophysics, I’m looking forward to working with you to assure that the figures in your article are satisfactory to you and also meet our visual standards. Annual Reviews treats figures somewhat differently from many other journals: we work with your figures to ensure that text is legible and consistent, colors are used to maximum advantage, and figures are overall as clear and excellent as they can be.
+
+I've just looked over the figures you submitted, and I see that they are in flattened raster format, so that none of the individual elements can be edited or scaled separately. Because I will need to make house style changes to fonts, capitalization, color, and the like, I'm hoping to get the images in the original editable format you used to create them, with vector components and/or layers that can be independently manipulated. Editable text is especially important. If vector graphics are not available, please send high-resolution versions (at least 300 dpi at desired final print dimensions).
+
+The figures I need in a vector format or higher resolution are Figures 1 through 4. 
+
+Preferred formats: 
+- If you created the files in Adobe Illustrator, please send the original .ai or .eps files. Make sure images are embedded, not linked.
+- If you created them in Photoshop, please send LAYERED .psd or .tif files, with text on a separate layer from the images. Or send the photos without the text and lines and I will add these in the correct style. (Minimum resolution: 300 dpi at final print size.)
+- If you created them in PowerPoint, please send the original .ppt file(s). 
+- If you used a different program, such as Freehand, Canvas, CorelDraw, Arc, CAD, or ChemDraw, please use "Save As" or "Export" to convert these to a vector format I can then easily edit (.ai, .eps, .pdf, .ps, or .wmf). Often one can print to PDF format as well: choose "print" but select "PDF file" as the destination instead of your printer. 
+
+[NOTE: If you obtained the figures from an online version of a journal, you will most likely need to contact the paper's author(s) to obtain original high-quality files (which can be done at the same time that permission to reprint is obtained). The versions of figures found online are typically compressed, flattened, low resolution, and otherwise unsuitable for our book-quality printing.]
+
+Our Author Graphics Guide, which explains the terms raster and vector, is available at  if you need additional information.
+
+To send the files, you may email me attachments up to 50 MB per message. Or you may place files on my graphics FTP site; please let me know if you'd like to upload files in this manner and I will send along instructions.
+
+Please don't hesitate to contact me if there is anything I can do to explain or assist.
+
+Thanks in advance for your help, 
+
+Alan 
+
+ Site overview. Edit files in place. Issues. Clone URL.
+ Cloning. SSH. Keys
+ Git workflow: status, add, commit. Push, pull, remote.
+ Issues: labels, assignment, mentions, references. Markdown. Milestones.
+ Commit messages: references, closes/fixes.
+
+Look what a nice job Jake VdP did with gh-pages for the Astro Hack Week last September. We could even pinch his background image.
+
+Write markdown file outlining workshop plans, including:
+
+ Meeting schedule - talks, hack sessions.
+ Pre-workshop tutorials
+ Post-workshop activities and timeline
+ Community building - workshop email list, these issues, etc.
+ Advertising: meeting website, email timeline etc.
+
+
+ Chapter folders, with latex files
+ Global latex files: main, macros, references.
+ Makefiles
+ README
+
+ Chapter headings, with responsible authors.
+ Chapter layout template, with sections to be filled in before and after workshop.
+
+It's important. I put in "The LSST Observing Strategy" and "MAF Workshop" as placeholders for the names of the white paper and the Seattle workshop respectively, but these need thought. Comments welcome below, especially from people who have thought more about this than I have! 
+
+Hi SimonKrughoff - you made some really useful notes in issue thread #19, which we now need to capture into some sort of script, to allow any of us to repeat your work. What do you recommend? A markdown readme to cover the installation stuff, and then a short shell script that does the execution? Can the script be python? Woudl a notebook be useful to combine the readme with some python calls?
+
+Problem 1: 
+
+
+There maybe other problems too... aagnello can you try and run on some test data and clean this up? Feel free to reassign to me if you get stuck.
+
+To do:
+
+ Put code in `host.py` into a `def` that takes numpy arrays as input and can be called by:
+ ... a new `DB.addHost()` method
+
+Things to do:
+
+ Refactor `paint.py` into a `def` that can be called from a `db` method called `db.paint()`
+ `db.paint()` needs to add new columns to its table of lenses, that contain the new magnitudes in the other filters
+ Matching code should be a separate `def` that is called when coloring either lenses or quasars
+
+Possibly due to the way in which kappa was defined and generated.
+
+Solution: add column with consistent kappa_ext given magnifications, gamma and lens model.
+
+Needs working into plan (introduction) and then experimental sections. Can we tell when we have reached *sufficientmodel flexibility? Can we detect the likely presence of residual systematics this way?
+
+General principle: define test statistic $T(d)$ that only depends on the data vector at hand. Then, form the posterior predictive distribution for $T$, ie $P(T(d^p);d) where $d^p$ is a predicted data vector (drawn from the posterior PDF for the parameters, and then the sampling distribution to capture the noise) and look at where $T(d)$ (the test statistic of the observed data) lies. More discussion in Gelman and Shalizi (2012)
+
+Goals: 
+
+ Minimize repeated code (to avoid mistakes)
+ Check in top level batch scripts
+
+Here.
+
+Let's write some notes together. Feel free to suggest reading material below, and keep track of your own progress. Note that this issue will only be complete when all of our checkboxes are ticked!
+
+Phil's reading list drphilmarshall:
+ ] [Wikipedia page
+x] [Darren Wilkinson's introduction
+
+Adam's reading list abmantz :
+ 
+
+
+Doug's reading list deapplegate :
+ 
+
+
+
+
+
+Things to do:
+
+x] Write down problem, ABC solution, and program of testing in the [markdown doc
+ ] Implement in the simplest possible ipython notebook, whose [nbviewer]( visualistion is linked from the [markdown doc
+ Or, do the equivalent in some other language. Like R, for example.
+ Explore how to carry out ABC to give accurate inference of the Gaussian width.
+
+As suggested by MichelleLochner in #1. Depends on #3, in the sense that this test will be much more sanely done after kponder has refactored the code to work with a range of (two) optional models.
+
+At the moment we are doing experiments on mock datasets of 200 supernovae. What would it take to repeat these on 100,000 supernovae? Some benchmarking tests could be interesting - and let us know if we need to be thinking about going to NERSC any time soon.
+
+kbarbary in lieu of this, can you check in suitable whiteboard images please? Then, I am imagining a single latex document that sets out our stall, and then has one section for each model we implement. This document can then be copied and pasted from when we come to write papers - but in the meantime it can serve to explain which models we are investigating (and why).
+
+Looks like the `lnlike` function in `importance_sampling.py` could be refactored to call out to one of any number (currently two) model's likelihoods. Let's do this refactoring so that we can explore different model choices without changing the way `emcee` is called at the hyper level. kponder could do this safely from her MultiPop branch, before merging to her master and submitting a pull request.
+
+The nice thing about this scheme is that then we will be able to define models by PGMs, and then implement them as single separated likelihood functions.
+
+Input: an image of a cluster of galaxies (or its constitutent parts). 
+Output: the corresponding PhoSim image.
+
+We'll need to choose a pointing for any given Twinkles field we make. What criteria should we choose? CatSim objects in that field? OpSim observing pattern in that field? Product for this hack could a better markdown document, with links to resources. Or a small piece of code that visualized the properties of any given pointing, both in terms of CatSim and OpSIm outputs.
+
+If the plan was to take each galaxy in a Twinkles field, and put a lens in front of it, we would need a small piece of code that imports om10 and finds a suitable lens system - and then doctors the CatSim output appropriately. Note the similarity of this hack to the Twinkle Sprinkler ( #20 )
+
+Write a small piece of python that reads in the output of CatSim, adds twinkles, and writes out PhoSim input files. For example, each galaxy could be given an AGN. Or a supernova. Rahul? Curtis?
+
+Do whatever it takes to produce the first Twinkles image. drphilmarshall is in.
+
+Tony and Saba?
+
+Hi Lynne!  
+
+I'm making wiki pages to help me present our work on the strong lens time delay metrics to the DESC collaboration at our meeting this week. Unfortunately I can't reproduce your nice results, because of the error in #10 - would you mind pasting in the accuracy, precision and fraction plots from your notebook, please? I was thinking it'd be nice to show the skymap on the left and the histogram on the right in each case - and we're only interested in the "multi" filter results, I think. What do you think? Thanks! :-)
+
+Has something changed in the way the lsst python module works? The time delay examples notebook tries to do
+
+
+
+but this causes me the following error:
+
+
+
+This is after doing the usual loadLSST.csh, making sure I am using Anaconda python, etc. BTW ipython tells me that the only packages available in `lsst` are `lsst.pkgutil` and `lsst.sconsUtils`. 
+
+Check this out:
+
+
+
+400 : Bad Request
+We couldn't render your notebook
+Perhaps it is not valid JSON, or not the right URL.
+If this should be a working notebook, please let us know.
+The error was:  403: Forbidden
+
+It's weird, because this worked fine at the astro hack week in September! And this repo still looks nice and public... Any ideas, Lynne?
+
+
+
+
+From Richard:
+
+For simulations resources, I assume we could use grid resources and/or SLAC. NERSC is still problematic in general for PhoSim, though it could be that the postage stamps are sufficiently similar that the block booking of MPI nodes would be efficient. Tom can explain better in person.
+
+ (e.g. rings, faint shapes etc as listed)
+
+This was Richard's last pre-hangout question.
+
+I think this is Run-specific. The tests that Run 1 will enable will be different from those enabled by Run 2 etc. Each time we design a Run, it should be in terms of the tests that the data will enable!
+
+Do we know what steps we would execute?
+
+Questions from Richard, pre-hangout.
+
+Having a sense of which basic measurements are possible right now is a good idea. Maybe SimonKrughoff can summarize, or point us to a good DM README?
+
+
+
+Question from Richard, pre-hangout.
+
+Following hangout on 1/28/15, here's what we need to do:
+
+ Start markdown document to contain design notes for our first simulation
+
+Include notes on:
+ Input supernovae
+ Input lensed AGN (drphilmarshall)
+ Observing strategy (small dithers, center of focal plane) (drphilmarshall, ...)
+ "Reduction" strategy (eimages only, with calibration emulated...)
+ Which measurements to make, using the DM products
+
+Where and how to run:
+ CatSim
+ PhoSim
+ The DM stack
+
+Add more items as you see fit! You can volunteer for tasks by adding your name...
+ High level analyses
+ 
+
+eg:
+
+Here's a list of new arXiv papers authored by KIPAC members:
+
+
+
+Many congratulations, Eli! 
+
+This message is automatically generated and sent by KIPAC TeaBot.
+Create an issue if you have any suggestions/questions.
+
+jakevdp suggested this textbook when I showed him this repo. Its downloadable here, and looks well worth a read:
+
+
+
+I added Jake, davidwhogg and jonathansick as collaborators so that we can discuss this project in these issue threads. I think this could be fun! Not to mention very helpful (if well designed) for teaching data analysis.
+
+Hi Roger!  Ryan forked this repo yesterday to enable this project to be hacked on efficiently. We pitched a simple toy problem to the crowd at the CtU2015 symposium and hack week, and picked up several people interested in thinking about all-universe mapping in various ways. Here's where we are so far, having spent a lot of time discussing aspects of the problem, and merging ideas and goals with Michael Schneider et al:   If you make edits to this hackpad (and please, please do!), you should (I think) then get email notifications from hackpad so you can keep track of what we do. Also, you should "watch" Ryan's fork to follow the code appearing there. He'll submit a pull request at some point, but for now, here's the link: 
+
+The context of this project is set by this paper. 
+
+You can make one in doc, to keep them out of the way
+
+You can start one in doc
+
+ Read in Consuelo halos
+ Pickle Triplet
+ Evaluate their likelihoods
+ Plot, informatively
+
+Have fun! :-)
+
+
+
+Try the SQLS lenses (and non-lenses?) from Agnello et al 2014, or maybe even the example catalogs from that paper if they are available.
+
+Check in SDSS query notebook...
+
+x] Read [Bovy et al 2012 
+ Write section in paper about applying this to SDSS objects to find lens targets
+
+What do you think, ericmorganson? Seems like `import PS1QLS` is all we want and should need to do... 
+
+We need to know this in order to design dynamic stage 2 for the next (DES) project.
+Let's bin the CFHTLS stage 2 agents by final skill, and for each group, ask how well they would have done at the refinement stage classification. cpadavis your idea is simply to make ROC curves for the stage 2 offline analysis only using each group's agents, and compress these into the area under the curve as a measure of classification performance. (Actually lets use the Informedness = 2AUC-1) Looking forward to seeing I vs skill! :-)
+
+Nb. This issue is describing "test 2" from issue #68...
+
+On the figshare JOBI site, each idea had the following text attached to it, underneath:
+
+Cite this:
+Marshall, Phil (2013): Multi-band Image Restoration by Modeling Physical Emission Components. figshare. 
+
+I thought this was good. Could we have something similar in the RH sidebar?
+
+Other apps do this, so why doesn't this one arfon? Eh? Eh?
+
+Pair code this with aagnello - tidy up, modularize, check line by line with mathematica
+
+Hi rhw! When we started this project, mbusha tried using Consuelo. Is this still the best simulation to use? Or should we use a differnet one?
+
+And then, where are the halo catalogs? marxwillia is making good progress to having the likelihood approximated by Christmas, so let's set him up with at least some halo data to compute likelihoods for!
+
+There are two published brief ideas here about the JOBI concept:
+
+
+
+and then two more here:
+
+
+
+It could be nice to have these as the beta examples! 
+Great stuff :-)
+
+
+Start with single set of scales/pars and see what they look like.
+
+Let's focus on tests in CFHTLS, and see what it looks like including both innovations (offline processing with EM algorithm and educating robots using training+test images). This may not be enough for 1 LPU, but let's see. What do you think would make for a good paper scope?
+
+Maybe Human Computation shoudl be our target journal? Check out their website at least.
+
+..so that we are ready to accept feedback from the community, eg Keeton et al (whose attention we can draw to the paper's website). I suggest we aim to submit to the arxiv on Nov 3, but hold off journal submission until two weeks later. Let's get some proper peer review in first! If you are agreeable, yasharhezaveh, please do change the name of the Letter submission milestone.
+
+And keep documentation cells up to date! :-) This is going to be fun. 
+
+Kormendy thinks its important!
+
+Lets show the variety of cored-sersic parameters in *massive ellipticals (ie, sigma > 200 km/s or something). Also, arent there supposed to be two components to the stellar mass distribution, to model Kormendy's "extra light" at the center?
+
+Hi XiaoleiMeng! Just browsing here, looking fwd to seeing results and plots in the paper. Can I suggest that you store figures in docs/figures and any plain text results that you generate with pylens in a results directory? I think the pylens should probably just contain the python lens modeling code you used - and maybe just the files that make up the pylens module, scripts that call pylens could live somewhere else (a scripts folder?). The goal is to make the project repo as easily navigable as possible to whoever comes along next to build on your work.
+
+Thanks richardxdubois ! 
+
+DESC organization owners:
+To reduce email traffic, follow the link through to the twinkles github repo and click "unwatch". This will turn off notifications so that you are no longer following our progress.
+
+A random 10 arcminute field probably doesn't contain enough, or the right distribution of, supernova host galaxies and massive lens galaxies. What can we do about this? What constraints do we have on the spatial distribution of our twinkles?
+
+wmwv suggested a moderate galactic latitude field. On what other criteria should we choose the survey pointing center? Let's then pick one to get started, and see what it contains.
+
+I think we need some markdown notes (in Design.md) on how we are going to populate our sky patch, given a pointing center, and generate PhoSim input files. SimonKrughoff, do you want to have a first go at this?
+
+
+
+
+
+
+
+Deflection angles are reasonably good, so more complex mass distributions can now be read in and used. Maybe next we should make our first predicted images, ready to feed to the ALMA simulator?
+
+I see tens of percent error in the central regions... Is this good enough, yasharhezaveh? I'm guessing no, but I might be wrong. What's the acid test, wmorning ?
+
+Nice to see the fruits of your labor! :-)
+
+
+
+
+
+
+
+Erm, how are we going to do this? I am not familiar with the darksky API. Maybe we can adapt the select_SDSS() function into a complementary select_DarkSky() function? `mechanize` seems pretty powerful.
+
+samskillman can you please check in? I am fondly envisioning a python file containing a "MassiveImage" class, please, such that 
+
+
+
+starts an enormous image that we can paint galaxies onto. I don't know how you are painting pixel values yet (you mentioned a scikit  method?) but if you can give this class a suitable method that does whatever you have done so far then we can build off that.
+
+I think I want to be able to write: 
+
+
+
+where galaxy is an object with a position, size, and gri photometry. The position will (eventually) come from its halo partner, but we have photometry and (almost) sizes ready to go. I'm assuming that a for loop over galaxies is unavoidable, am I right?
+
+I made a simple file for us to keep notes on the data we use, and linked it to the README. Let's keep these notes up to date, they will be come a paper one day. To start with, can you enter as much as is necessary and no more to Data.md, please? Where did we get the data? What are its properties, how was it prepared, whats the paper to look at to find out more?
+
+Later we will need other .md files to document other aspects of the project, and some of our "docs" will actually be ipython notebooks, that do calculations as well as explain what we are doing. 
+
+I feel like this should almost the default swarm behaviour: agents run around with a distribution of speeds, bouncing off the walls and each other. If temperature is higher, run faster! 
+
+Just thinking about the objects in our model. Packaging up the plotting/interaction area as its own object will probably end up being helpful...
+
+How hard can this be in matplotlib? ;-)
+
+If in a notebook, render on screen; if not, write a PNG image.
+
+Read this: 
+Then write `def write(self,map="kappa",to="kappa.fits")` so that you can call it with `SIElens.write(map="kappa",to="analytic_sie_kappa.fits")` or similar. Notice how the use of kwargs allow more literate calls!
+
+Because we don't need it any more! Read this: 
+
+Then:
+1) Issue each task as you work through the plan.
+2) Crunch through them, closing each issue when its desired output is visible in notebook! :-)
+
+Learning inheritance! :-)
+
+
+
+And also the other credits.  "Made at #ScienceHackDay San Francisco 2014" etc 
+
+
+Well, the project title in both the sidebar and main frame of the index.html. Good style might be to retain the sidebar on all html pages, just change the main frame content. Maybe you could resurrect your "What's this then?" idea for the main page?
+
+Like this one: 
+
+Here's the source for that page, looks like a little bit of javascript that you can pinch.
+
+
+This shouldn't happen!
+
+Some choices of names could be improved. If "rules" was an object describing the rules to be followed, we could write:
+
+
+
+
+Still not sure how to code the rules object though. Probably by inheritance!
+
+
+
+And i think we can merge the plotting and the animation into one method:
+
+
+
+
+
+We should be using the same playground for all experiments!
+
+Agents need at least two methods: where to start and what to do each time step. These will be different in each model, so we need a mechanism for telling the agents what to do. One way we could do this is by inheritance, maybe?
+
+Then, the swarm will need to know about these new agents. Can we do this at instantiation time, with swarm then making as many copies of the agent as it needs?
+
+Need to try this and see how it looks. Writing the new agent class needs to be *super simple*...
+
+
+Hey mbaumer - so cool to see the initial cosmology model in action! :-)
+Let's tidy this little project up before we tweet it.
+I suggest we do the following:
+
+-  Make a sciencesays directory, and put a classes.py file in it that contains the agent and swarm classes. It'll need a __init__.py file to make it an importable module. 
+-  Edit the notebooks to `import sciencesays` and then make sure they still work
+-  Add some markdown cells to explain each demo.
+
+What do you think? I'm happy to make a start on this!
+
+Hope you like them! :-)
+Later, we should add a photo of one of you holding a 3D printout in your hand, to illustrate the whole process (input2stl2photo).
+
+I think this would make a nice little paper for the American Journal of Physics - the idea would be to enable teachers to pick up dark matter simulations as a topic for use in class. We'd want to give them some pointers as to where to get N-body data etc, and then explain how the print outs were derived, what they show etc, so they can realize their own halos and filaments and use them as a teaching aid. What do you think? 
+
+Hey devonmpowell and tonyyli - what a marvellous repo! :-) I was thinking, why don't you add a couple of images to the top of your README and/or to a gh-pages cover site, to show people what you made and what they could soon own as well? I'd do this for you and submit a pull request but I don't have the photo of Tony holding the halo to hand... 
+
+Hi otaviogood protodave cgorringe,
+
+Great to meet you this weekend! And thanks for all your hard work helping GalaxyCraft become a reality. I think we built something pretty cool, and I'm interested to see how far we can push it. My plan is to tinker with it as a hobby (as recommended by Otavio, coding is for fun), and I hope you will too. Let's keep chatting via these issues, and see how far we get!
+
+In the meantime though, we'd better get some sleep :-)
+
+Cheers
+
+Phil
+
+
+
+Something odd going on with jsp and js directories, to be fixed Saturday morning!
+
+
+
+
+
+
+
+
+
+ARAA request that we submit:
+
+-    an editable text file of the main text and any tables;
+-    editable graphics files (see Graphics Guide for preferred formats);
+-    a PDF file of the entire manuscript, including all figures and tables; and
+-    a separate PDF file containing the figures only.
+
+
+
+Thoughts? At one point I thought we might include a voorwerp or microfun figure... (#91, #92) - but first we have to reduce the length...
+
+On the grounds that we are focusing on intellectual contributions. We didn't cover grid computing, should we cover tweet and photo mining? Perhaps not.
+
+While working on #125!
+
+While working on #125!
+
+As suggested by Anton Koekemoer, by email - thanks Anton!
+
+Hey chrislintott, do you want to add anything to the acknowledgements?
+
+Let's just straight up hard code an SIE, and plan on refactoring it later to be more general. Let's use the equations in Evans and Witt 2001,  These only apply to "scale free" ie singular isothermal density profiles, but they are fast to compute and will enable interestingly evil features like boxiness later down the line. You should read the Saas Fee lectures too - if Yashar doesn;t have a copy of this that he can lend you, you can download them. Here's an online library of useful works in gravitational lensing:  - you should be able to find the Saas Fee lectures there.
+
+Note that the SIS model is fully analytic, and so is a good test of any SIE code! You should think about this a bit: how will you prove to me that your code is calculating deflection angles accurately?
+
+FYI and for future reference, Barkana 1998 worked out how to compute a singular power law elliptical mass distribution (SPEMD): 
+
+
+I started a directory called "evillens" and added an __init__.py file. This is to enable us to do:
+
+
+
+
+Can you mv Lens_prototype.py into evillens/lens.py and check that the above commands work from teh top level directory, please?
+
+
+
+
+now runs a quick test of the sigmacrit and distance calculations. Note the units of SigmaCrit! These should be Msun / Mpc^2 !
+
+-  Introduction
+-  Amateur Observing
+-  Visual Classification
+-  Data Modeling
+-  Citizen Enquiry
+-  Understanding the Citizens
+-  The Future of Citizen Astronomy
+-  Concluding Remarks
+
+See #114!
+
+Quick question raised by Leigh - can you add a suitable sentence to the classification in other fields section please, chrislintott ? Thanks!
+
+
+
+
+
+See marked up PDF in 2014marshall_citsci_LNF.pdf.
+
+
+
+
+
+
+
+The posts/PLAN.md needs updating with the bloggers currently on deck... Thanks!
+
+Wikis are also repos, so I guess the thing to do is add this repo's wiki repo as a new remote, and push to it. We shoudl be able to do all the merging in such a way that all history is retained...
+
+On it.
+
+Just to keep things together, in a compact archive? This would break all the current links (on twitter) but that's probably not too much of a problem. Once everything was reassembled we could just re-tweet (or better, blog) everything again. We'd also lose the history of each dayX repos doing this, but again, maybe not a problem. I only count 3 forks of all 5 days' repos, so this too shouldn't be too painful for people. Thoughts?
+
+One thing I'd like us to make is a complete registry of hacks, so we can combine it with the survey data and give brittafiore more to work with - and this should help a lot with the blog too (we could use it to plan posting dates/milestones). A simple MD list should do it, with links to the hackpad entries. Is there an easy way to scrape the hackpad collection? I'm also not sure where this file would live, but if you start it, jakevdp, I'll try and help with the scraping. 
+
+By bareid and me, at AstroHackWeek 2014 :-)
+
+That you want to leave us thinking?
+
+Don't indent before the '*'?
+
+
+
+Plea from davidwhogg 
+
+Minka (2001), NIPS13 offers a Bayesian solution: 
+
+Thus making it Bayesian Bayesian blocks! :-)
+
+An attempt at a linked brush extension to the plot_multicolor() function. Should be cool, right? The code looks OK, works with interactive=False (the default), just doesn't display. Little help, jakevdp ?
+
+I think we could get people started quickly by getting them talking to some ore experienced hackers on the first day. 10 people round a table, with an old hand leading a short discussion of some possible hacks, starting from those just pitched, or arising from the first morning.
+
+Possible text for the hacking central wiki page:
+
+"On the first day, the stand-up will be short (just with some initial pitches). Instead, we'll spend some time in small groups talking about possible hacks, and pairing up - so don't worry if you have no previous hacking experience, you'll learn fast in this session."
+
+Instructions here: 
+
+Sneak preview of the 2015 branch at 
+
+Thanks for getting the ball rolling at UW! :-)  
+
+Because we now have a brand! 
+
+Looks like I managed to mangle the numbers in the Quench section while editing for punctuation, sorry! Can you take a look, please, chrislintott ? Cleanly distinguishing the classifiers, discussers, and analysts seems important. Was it 1600 classifying, then ~300 discussing and concluding in Talk (20%), and finally ~10 figuring out plots etc for a paper? 
+
+Not sure where a mention of this project would belong: an endnote to the GZ discussion perhaps, or elsewhere if the project is pushing the envelope in some way. Citation is Banfield et al 2014 in prep.
+
+It's just the example in the docs, plus a little evidence check. Here's the result:
+
+
+
+
+which means that there is at least one bug in this code! But it runs to completion, and the docs are up to date. What more could one want?
+
+
+
+
+
+Include  url in the comments field, pointing at the PDF here on github:
+
+
+
+Then invite feedback via the issues here:
+
+
+
+Don't forget to close out shareable draft milestone, to avoid confusion!
+
+
+Idea would be to show synergy between professional and amateur observing. Example 1) amateurs filling in professional-instogated lightcurves. Example 2) amateur monitoring used in targeting HST?
+
+Perhaps comparing detection image and follow-up image?
+
+
+
+
+
+
+
+Roughly: after reintroducing SW system and CFHTLS data, present results in two parts:
+
+1. Does SW work? (cont'd from Paper 1): Completeness tests against confirmed CFHTLS lenses
+2. How does SW compare with ArcFinder and RingFinder? Candidate sample Venn diagram etc.
+
+Part 1 needs "confirmed" lenses from SARCS and SL2S-RINGS, to make a gold standard to test SW completeness with.
+
+Part 2 needs samples of lens candidates selected to be roughly comparable in terms of plausibility threshold. Defining this could be tricky but hopefully SW expert grade >= 2 will map on to something similar that the SARCS and SL2S-RINGS teams did. This is where we look for understanding of the SW and Robot systems, by looking at SW candidates missed by RF and also RF candidates missed by SW, and so on.
+
+
+
+
+
+"Our online page-length calculator can help you monitor length as you prepare your submission:"
+
+
+Use this to estimate page count...
+
+chrislintott There's a placeholder for you to add a note about enabling anyone to build a classification project, if you want. Search review.tex for `Will this community take to crowd-sourcing its visual inspection?`
+
+Search review.tex for `A different approach to` to find this part.
+
+I am browsing Ivezic's book (Statistics, Data Mining and Machine Learning in Astronomy, pages 257-264) for density estimation options. K nearest neighbors and Gaussian Mixture Models are both implemented in python libraries available to us:
+
+
+
+
+Let's try both, and compare. Looks like the class at least includes an estimate of the BIC, which would do for a first look (along with visual impression). 
+
+Hey Chris - I wrote a short "concluding remarks" section, please read carefully and upgrade it as you see fit. Thanks!
+
+
+
+
+
+This is the easiest issue to fix ever. Do the following:
+
+git remote set-url origin gitgithub.com:drphilmarshall/Ideas-for-Citizen-Science-in-Astronomy.git
+touch README.md
+git commit -am "Fixed #79"
+
+:-)
+
+What's a good test for this?
+
+
+
+
+
+Need to ask chrislintott how to do this. A webpage listing all SW usernames? What did PlanetHunters do?
+
+
+Might help a little with the system paper discussion - and you'll need to get your notes into preprint form at some point, anyway, cpadavis! Don't worry about style files at this point, basic latex will do for now.
+
+When doing online SWAP analysis, a the moment we take the "final" Pr(Lens|data) for each subject and use it to rank candidates, select samples, plot ROC curves etc. We could also use the maximum P that the subject attains over its classification history - this could help prevent false negatives, is the hope. Actually I think we want to look at Px, the extreme P value - whichever P value is farthest from P0:
+
+
+
+
+
+
+What effect does that have on the stage 1 and stage 2 online analysis ROC curves? If this can investgated without upgrading SWAP (yet) that would be great!
+
+This plot is better placed in the discussion section, I think - when we are talking about possible improvements to the web app. Point size can be stage 2 contribution.
+
+Thanks A! 
+
+Let's use the expert grades to rule out the subjects that contain good lens candidates (expert grade > 0? >1?), so that we (well, Chris) can then auto-extract all the other marked objects for the FP atlas. 
+
+Only just getting to this, to my regret. Leigh is away in early September, so I think this means we take over from here through till submission. Leigh will get these emails, but we shouldn't expect to hear from him! We can hold off from submitting until he's back so that he will get a chance to see the finished review before submission. Apologies for letting other things get in the way during August!
+
+Top tip from Anu:
+
+Follow the same procedure of vis inspec & grading as before for the extra 238 candidates. You can do: 
+
+
+
+and use this for viewing the images in the applet.
+
+If we had only asked the high skill users to take part in stage 2, we might have made a cut in stage 1 skill at say 0.2, and then only showed them the refinement app. We can emulate this by ignoring all agents with names not on this list. What happens to the completeness/purity? Do we have fewer false negatives? And do we see any lensed quasars appearing? This is worth a try I think: it's one way to address the false negatives problem (issue #68), which I think becomes more pressing since we discovered that the stage 2 agents don't know anything about lensed quasars... What do you think? We'd have to read the CFHTLS stage 1 agent names first, then propagate (watch out for the VICS82 stage 1 agents, thats a different bureau!)
+
+If this is a long-standing bug then stage 2 reprocessing is about to get a lot better. Let's see - the alternative is that the types in the mongodb itself could be off - in which case plotting completeness to any one type alone is not going to be possible.
+
+anupreeta27 can you do the following from the doc directory please?
+
+git add sw-cfhtls-figs/lenscand_2p0_3p0.pdf
+git add sw-cfhtls-figs/lenscand_2p0_3p0_1.pdf
+git add sw-cfhtls-figs/lenscand_1p3_1p7.pdf
+git commit -am "Candidate galleries, first attempt"
+git push origin master
+
+Thanks!
+
+How many low skill users add up to the contribution of a high skill user? etc. A good way of talking about being a newbie. 
+
+Likelwise, add a note about how we effectively downweight early classification, so you don't have to worry about breaking things - point to goo dresults, and alternative histories in ROC curves. Maybe all this goes in teh discussion section?
+
+Is it indeed q_flag >= 2? The sample we want is the one after both RF was run, and the SL2S-Rings group did their visual inspection - ie it's the RF equivalent of the expert_grade >= 2 sample. Double check with RG after reviewing the RF paper.
+
+From the whiteboard: 
+
+Test 1: [plot trajectories and] check statistics of high skill users' classifications of stage 1 and stage 2 false negative sims (paper 1), and confirmed lenses (paper 2).  
+
+Test 2 (later!): re-run stage 2 offline swap with only the high-skill agents. 
+
+Hey cpadavis, how hard would it be to plot completeness vs purity, divided by sim type? I bet we do better recovering lensing-clusters than lensed-galaxies and lensed-quasars! This would be another many overlay, stage 1 and stage 2 on the same axes, sort of figure. What do you think? 
+
+Good to define quantities for astronomers before explaining rescaling and showing expected purity and completeness.
+
+The question is: *in what wayare the three samples different. 
+Things to measure:
+Rein (in units of Reff?), lens magnitude, arc/ring magnitude (approximate)
+Other possibilities:
+some measure of color contrast? (Both RF and AF are blue-biased)
+
+I think the only fair way to compare the RingFinder, ArcFinder and SpaceWarps lens candidate samples is at fixed expert grade. If we're going to investigate the overlap between the three methods, we'll need expert grades for all three samples - which means expert grading the RF and AF systems that SW missed. anupreeta27 can make a sample of these missed systems, and mix them with the next N stage 2 SW candidates, and we can grade them like we did the others. Then we can plot a Venn diagram as a way to start the investigation of which method finds and misses which systems, and why.
+
+To do this, we'll need the extended RF sample - including not just the systems that happened to be confirmed by follow-up, but also the ones selected by the RF team for follow-up observation. drphilmarshall to remember how this worked, and define sample based on Raphael's webpage.
+
+Maybe the first one is the proceedings of the workshop that Knut mentioned? Or some sort of "launch" to prompt everyone to check in?
+
+We talked about this in Phoenix - the idea was to fix up the docstrings in the contributed files so that they compile into some nice set of online documentation. Alex Kim suggested "readthedocs", there's also sphinx and doxygen that we could use to make pages served on the gh-pages of this repo. Implementing this early might help us with the organisation of the contributed code. 
+
+I have a stacker, a driver, and three metrics ready to go! :-)
+
+I think we want:
+online stage 1, blue
+offline stage 2, orange
+Completeness C (%) vs Purity P (%), with the usual star at the P = 0.95 point. Definitions of C and P are  in the text (please check that they make sense!) Let's extract some good P and C numbers for the text too - these are conclusions and abstract gold.
+Thanks!
+
+I would suggest:
+
+Stage 1, online, M=0.5
+Stage 1, offline, M=0.5
+Stage 1, online, M=0.75, no learning
+Stage 1, online, M=0.75
+
+and likewise for the stage 2 plot. The tricky part is the M= piece, because we don't use M except in the appendix, and we somehow need to denote initial M. I think we want to avoid terms like suspicious, optimistic etc somehow, so we are left with symbols. If you use latex for the labels, we could use the same symbol as in the appendix, which would be \mathcal{M}^0_{kk}.  
+
+As prelude to understanding the other observations, and the various coordinate transformations that have been done and are needed now.
+
+
+
+To make it easy to select a sample for the paper(s)
+
+
+
+This is primarily for the blog team to choose a paper to highlight - but also for advertising on the KIPAC webpage. We'll figure out embedding frames later - main thing is to get *somekind of web page up!
+NB we need to track papers by staff and faculty as well, so we'll need these lists from Martha too.
+
+Martha can provide lists of people on demand!
+
+I think I'm happy for section 6 to go to our Zooniverse colleague as it is: what about you, chrislintott ? Who should I send it to? Rob and Brooke? Jordan as well? Others?
+
+Nice and big: zoomed in views (20" cutouts?), each taking up 1/3 or 1/2 of the \linewidth. We can overlay the IAU name on top of the image using latex. Anything else we should overlay? Expert grade and SW P? I think there's no need to mark on WCS axes, we can just get that from the name and/or the table. Really looking forward to seeing this! :-)
+
+Possible columns: 
+Name, SW ID, Ra, Dec, Known?, Known-grade, P (stage 2), expert grade, comments
+
+Probs only need comments if its a new system ("known = New", as opposed to "Ring" or "Arc")
+Known-grade (need s abetter name) is eg the RingFinder q_flag
+Not sure how best to sort this table  - by expert grade, probably. Think this will be controversial?
+
+
+
+
+I think this is in aprajita's court...
+
+Completeness and purity vs P threshold
+Einstein radius distributions (histograms) for various selections
+
+Not sure how best to display our known lens recovery - above are just some ideas. 
+
+RG could write this, perhaps?
+
+Quick mention in section 2.2, for completeness? And to show that our new lens candidates really are new.
+
+Equal emphasis on detection of new lenses (ie second half of the proof of the SW concept), and comparing with robot performance. BTW I think we might change the title to reflect these twin goals as well, what do you think?
+
+ASAP! :-)
+
+He'll have to go back to his pre-LRG selection for some of them, I expect. How about we offer him co-authorship of paper 2 for helping out, what do you think? He may turn it down, he is a principled man.
+
+Context is, we're writing papers and want to catch things before they fall through the cracks. 
+
+
+
+OK cpadavis, here is what I would like to see in de-emphasised (thinner or lower-alpha)  lines on an ROC curve  and the crowd plots (not the corner plot!):
+
+Dotted = "Unweighted" PD = 0.75, PL = 0.75, agents don't learn. This should give a straightforward voting system, where no-one is "down-weighted". Agents that learn should do better, in terms of lowering the FP and FN rates in the final sample in each stage. Crowd will seem to be more skillful - but by how much? Who does all the work in this scenario?
+
+Dot-Dashed = "Liberal" PD = 0.75, PD = 0.75, agents learn, training subjects only are used. This will give very similar results to the standard online analysis (PD = PL = 0.5, agents learn, training subjects only). The crowd will again seem to be more skillful, but not be much. Who does all the work in this scenario?
+
+Dashed = "Unsupervised" PD = 0.5, PL = 0.5, agents learn, but training subjects are not used (only test subjects). This should give a worse sample than the trained agents do; I expect it to be less complete, as it will be hard to change anyone's PL, in particular.
+
+Let's start by adding these to the standard ROC curve plot, and see how busy it gets. We'll need numbers for the text as well - you can cut and paste the plotting script (and/or SWAP report) outputs into doc/notes/notes-cpadavis.txt perhaps? Once we've seen what the plot looks like, we might think of splitting these tests onto their own plots. Perhaps.
+
+Can you think of other interesting cases to investigate? Using both training and test subjects could be postponed to your A&C paper: there, the goal is to do better than Paper 1; in paper 1 we just need to explain and justify our choices. Thanks! :-)
+
+
+
+
+
+Goes with the gallery, I guess - issue #38
+
+I guess we'll host the catalog and associated PNGs (plus a nice PDF document of them all?) on a website somewhere. I wonder if the zooniverse would be happy to make us a (for now) unlisted folder at spacewarps.org/products where we can put things like this for people to download easily? Is this something to design and then ask for?
+
+Depends on #39, obvs.
+It *mightlead to some additional expert  inspection, I guess? So it'd be good if we can get the offline stage 2 catalog sooner rather than later. Thanks for hustling, cpadavis ! :-)
+
+I'll start this, and then hand over to you, cpadavis. I'll explain why we did stage 1 online, and give some brief justifcation for, and description of, the offline version of the analysis, which you can then correct :-)
+
+cpadavis can you check this into the projects/CFHTLS/stage2 directory, suitably renamed, and alert anupreeta27 when it's done please? She can then compare it with the online version, and catch the recovered false negatives. Thanks!
+
+Using Anu's script!
+
+in section 4
+
+in section 4
+
+As demonstration of system. Include example images, like Anu did for blogged candidates?
+
+Both stage 1 and stage 2?
+Use Anu's script for making images with inset panels for sims?
+Need to think about how many to include. And which ones...
+
+
+
+Make sure all information theory stuff is included and complete.
+
+Refer fwd to paper 2 extensively.
+
+
+
+
+
+You can over-write the current sw-cfhtls.tex file!
+
+Shouldn't we keep everything all together, html, css but also generic scripts needed for any code that is hosted? Or is the code all tied up in SpaghettiLens?
+
+Is SW labs running on the Zurich server? Great if we can put the link to it on the wiki and Readme.md
+
+Write wiki page(s) on these little javascript marvels, discuss them with Rafi there. Depends on #11 
+
+We need somewhere to briefly set out what each code does, and what it needs, so that Rafi can figure out how to absorb it into the labs platform. Github wiki seems sensible?
+
+Obtain labs.spacewarps.org from Zooniverse team
+
+Including note on independence.
+
+
+
+
+
+
+
+
+
+Preferably with a nice legend! :-)
+
+
+
+...needs a sentence explaining what the challenge actually is! What did you mean here, Chris?
+
+In bibtex! :-)
+
+In Time Domain Astronomy casestudy.
+
+Whats the optimal ordering of these sections given their inter-references?
+
+Can you check for consistency between sections please? There are lots of ``see below'' type statements in the GZ CaseStudy.
+
+Stellar targeting based on expert recognition of spectra. Ask JJ himself?
+
+Including key references! This is an important section.
+
+Depends on #61 
+
+
+
+
+
+Comment on who's good at it, how many people actually contributing? Not sure.
+
+Phil to have a first go, Chris to edit/gap-fill/embellish.
+
+As bulleted list? Will give it a go.
+
+After discussion with Chris I moved the solar system image processing and software development stuff you wrote into a single "case study" in the active observing section, called "Monitoring the Planets". Could you give this a careful read and edit please? In particular we need to make sure that:
+
+The text is correct, with references in the right places
+The ordering is correct, both for accuracy and flow
+This part is as concise as it can possibly be.
+
+Can you see a way to split this study into 2 or 3 smaller chunks? It would be nice if each case study showcased something different, for example: citizen-built analysis software; community data archiving that enables professionals; and so on. It wasn't clear to me that this would be possible, but perhaps you can see a way to shorten and focus this section? Thanks!
+
+Minor text changes, including bad grammar.
+
+Text tweaks, including some bad grammar.
+
+Not clear if we need an email shot, or a blog post, or what. How close to normal operations do we need? Maybe start with the science team, and then open to SW community by email to test at high traffic.
+
+
+
+
+
+
+
+All these subjects live in the same dataset, and none are retired. Should be an easy re-ingest!
+
+Testing that the SWAPR ruby code computes the same probabilities as SWAP.py. Stuart to lead this mini-project: go!
+
+Strands:
+Human-computer partnerships
+Scaling up
+Advanced, enabling, open-ended/flexible interfaces: gamification, bottom-up citizen science
+
+Leading to:
+LIVE and AT SCALE
+both as strategy to enable rapid follow-up, and coping with data volume (and complexity), and to keep motivation of crowd high. 
+
+Talk to Rob!
+
+Talk to Rob!
+
+Emphasis on:
+
+experimental nature
+attempt to enable and guide citizen enquiry.
+
+What worked well? What didn't?
+
+Would this section be better off in active observing?
+
+
+
+Note contrast between having and not having a cash prize... 
+
+Write this so that we set up the Future section to discuss:
+
+human-machine partnerships
+scalability, with citizens providing calibration sets for machines to learn from
+
+Emphasis on their initiative, rather than data modeling techniques.
+
+Include citation to Rafi's paper. 
+
+
+
+
+
+
+
+Contexts could be:
+
+increasing engagement via social interactions
+human/machine partnerships
+scaling up forums
+making CS fun
+
+NB. Future section is after demographics and motivation, so can/must refer back to it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Emphasis on what GZ enabled, that would not have been possible otherwise. "What has he Galaxy Zoo ever done for us?"
+
+Possibly outsource this to the GZ science team?
+
+
+
+
+
+
+
+
+
+
+
+Needs to go somewhere, not sure where yet.
+
+
+
+Update preamble.
+
+It's mainly image processing, but also making use of the Cassini archive (so not active obs, or passive obs). The analysis of the images is (presumably) visual, so might belong with Zoo projects - or maybe after them, to show what has been happening with image archives but no custom interface. Putting it after these might lead into some future section that includes discussion of making future archives public-accessible?
+
+
+
+To go in introduction. Emphasize usefulness of observations, benefits of additional observers (needed observations along track).
+
+
+
+Also make sure the introduction etc matches this. 
+
+Send this piece to Geert when done?
+
+
+
+As opposed to discovery, monitoring etc. Do this ASAP.
+
+AAVSO, and others. Books, reviews?
+
+Include:
+
+variable stars, AVSO, point to review?
+citizen sky
+variable nebulae
+nearby supernovae
+other deep imaging (Brooke knows about this)
+
+
+
+
+
+
+
+Question: does classifying more training images lead to increased skill? 
+To answer this, we can:
+
+Select groups of agents with approximately equal Effort
+Plot Skill vs Experience, and look for a positive correlation
+
+To do this cleanly, might be good to normalize the Skill by the maximum skill that could have been obtained by that point (the agents can only learn so quickly) - but lets try it unnormalized first. We can use cornerplotter just with two variables (and ask for the 1D histograms not to be plotted). 
+
+Let's compare all four possibilities:
+online, training only (ie as was done at stage 1)
+online, training+test (using the code merged in from the unsupervised branch)
+offline, training only
+offline, training + test
+
+I expect this to be the rank order in terms of ROC quality (as indicated by false negative rate)
+
+Which of the nxutils or Path mackages needs to be imported depends on teh version of matplotlib running. Solution is to try and import Path, then try and import nxutils if this fails. 
+
+Looks to me as though the spawn_lens() method has some orientation errors in it: the H1413 Nebula point sources get twisted by 90 degrees or so, and the Lens intialization does not converge. I put some comments marked "PJM" in the code: this function needs to be modularized (there is a lot of repetition, that can hide bugs), and unit-tested carefully against a known (analytic or manually computed) numerical result. I also suggest refactoring it into a method of the LensGalaxy class called "getLensedSource(pointimages) - this would help with the modularisation. This is how I started implementing the lens initialiization: for some reason the method I wrote is no longer there! 
+
+From Adri:
+
+I'd like chug to know how to optimize based on the model, so
+I'd actually add another argument to the driver. The idea is:
+
+if we ask for Lens from command line, it should
+
+
+
+
+
+
+
+
+
+else, if we ask for Nebula from command line, it should
+
+
+
+
+
+I guess we should either write two very similar optimizer classes,
+i.e. opt_lens and opt_neb, to be called from the main LensTractor
+script, or introduce the modelname variable inside the
+existing optimizer. This however is what I'm not able to do
+without making a major mess. Do you think you'd be able to
+make this refactor?
+
+
+From Adri:
+
+It seems that the initialization does something strange when reading in from
+.cat files; if you do
+
+
+
+and then
+
+
+
+you'll see that the last snapshot of the first passage does *notcorrespond
+to the zeroth snapshot of the second passage! When reading from the
+catalogue, the point-sources are somehow scrambled and I don't understand
+why. Do you know what's happening?!
+
+
+Spotted this when re-running stage 1 analysis. Stage 2 subjects seem to be ignored by SWAP, which is a bug... Stage 2 classifications should be paid attention to, but maybe not subject labels. Need to check this, and re-run stage 1 analysis (gah!)
+
+Agent bureaucracy math (appendix) and stage 1/2 explanation are still missing, but high level comments on Mike and Chris' analysis (interpreted and explained by me) are welcome!
+
+Mike and Chris implemented the information theory that Edwin and I worked on in Taiwan in March, so that they could analyze the crowd at KIPAC hack day. This code needs merging into here, so we can reproduce their plots and get them into the paper. I'm on the case.
+
+
+The rationale is:
+
+Cc'ing several people might encourage email discussion of the paper
+One paper per email enables us to put the paper title in the email subject line
+To assess whether I am interested in a paper, I just want to read th eabstract without clicking away from my email
+Clicking on the link registers a vote of interest with TeaBot: I want people to vote for papers by clicking through to the PDF, not the arxiv abstract, because I want to know who has actually read the paper! (We can assume opened PDF = "read" for tea purposes ;-)
+
+Thoughts? 
+
+Show the model on the left, and its predicted image lasso on teh right. Caustics belong on the left, critcurve on the right.
+
+The lasso contour level could be under user control, so they can refine the model's ability to capture various features of the predicted image. Another form box?
+
+Via a form box? Should be in arcseconds.
+
+Pixel scale in arcsecs per screen pixel... Input by a form box?
+
+A form text box to specify which image to model is the simplest way we can think of to enable the user to explore any old image.
+
+The one we have is 400x400 and makes the calculations really slow. Lets use a zoomed in PNG of a Space Warps candidate.
+
+Include notes on how LT differs from approaches by Chan & Suyu, Auger - which will get edited down later. 
+
+Citations are now in. I think I got the right ones for Herschel and SPT...
+
+
+
+Well, the whole paper needs input. But first, the abstract!
+
+Hi dstndstn 
+
+Adri and I have think we see some fits getting stuck in local chisq minima, in the H1413 example: the point source positions are very slow to move. Is this likely to be a problem with the stepsizes, or the steepness of the likelihood function, in your opinion? We are pondering doing some cooling, to start the optimizer out in teh warmth of lambda*lnprob with lambda = 0.01 or something, and then cooling teh system to lambda = 1 over the course of several rounds. Have you ever tried anything like this?
+
+We ought to be stopping the fit when its finished, and not before: when lnprob has converged. Tolerance? Needs to be at least k*log N for teh BIC comparison, but really shoudl be better than that if fit is good. 1 unit in log prob? Or better stlll? dstndstn?
+
+Approximate new paper plan, comments welcome:
+
+Introduce model comparison concept, and LT algorithms and code.
+Run LT on 10 SQLS lenses and 40 SQLS non-lenses, demonstrate BIC response.
+Initialization of Nebula by hand?
+Initialization of Lens from Nebula.
+Discuss practical application.
+Preliminary conclusions about model comparison for lens candidate assessment.
+
+Needs debugging, drphilmarshall
+
+Thanks Adri! Once these are checked in, I will work on coding up the PSF model inference.
+
+Hmm: I just checked in a KIDS example, looks like a singe quasar plus host. LT runs fine on the u,g,r images, and both Nebula2 and Lens can be fitted to the data. Lens has 2 fewer parameters, and consistently wins by BIC diffs of exp(few tens), driven by chisq being lower for Lens! 
+
+This could be because the Nebula fit did not converge, and the Lens model squeaked a bit more fit quality out somehow. It's not (just) the PSF optimization, because I get the same result if I turn this off completely... 
+
+It could also be that Lens is better at removing point sources, by finding good models that only produce single images. I'll look at how many images Lens predicts.
+
+Many runs (eg early KiDS, DES) will have only one image per filter (the stacked one). These could show the progress panels in rows, one row for each image, 4 panels per row.
+
+Image name on the sci image, model name on the model image. While we're at it, might as well label residuals and PSF as such, on the panels instead of in plot titles.
+
+Re-posting as a new issue, to keep things well-compartmentalised. See also discussion in #25 
+
+dstndstn, can you help us get the photocal right for SDSS images, please? dm.py and sdss.py shows the choices being made... its not pretty at the moment, I blithely assume a constant zpt for all SDSS images, and use a simple homegrown PS1 photocal...
+
+Thanks!
+
+
+
+Looks like the WCS might be wrong in the current SDSS example cutouts - see how the predicted features are offset relative to the features in the data, and how that offset is different in teh different filters' images? I think remaking the cutouts with correct WCS is the solution here. Try using **this script
+
+This used to be fixed, aagnello ! What went wrong?
+
+
+
+
+
+I will fix this. Emcee used to work, albeit slowly. Experimental idea is to emcee a few steps and then optimize from the highest likelihood one, in order to solve the initialization of a non-linear optimization problem... Comments welcome.
+
+Currently the optimisation is separate from the sampling, and called in several places. Let's split the driving of the tractor out from the main script, so we can see the workflow better. Something like:
+
+lenstractor.Explore(model,by=sampling)
+lenstractor.Explore(model,by=optimizing)
+
+We need an initializer that can:
+Initialize a model from scratch. (Code this first.)
+Initialize a model from another model of the same type (Code this second.)
+Initialize a Lens model from a Nebula model (Code this third.)
+
+Transfer trello board / whitebaord plan to latex, including the Questions To Be Answered from the matrix.
+
+
+Hey dstndstn, Adri and I are stuck on our SDSS example images. Here's the example command:
+
+
+
+
+
+and the resulting error message:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Any ideas what's going wrong? The example images look fine to me. I hacked in a PhotoCal in lenstractor/sdss.py, maybe that's causing problems? Another issue could be that the images are not registered to the same pixel grid, so the data arrays don't overlap perfectly... But this should be OK, no?
+
+Need to copy from somewhere and put in the README.
+
+
+
+Maybe a google spreadsheet, to go with a PDF gallery? There could be a couple hundred, depending on where we draw the line in P...
+
+Such a lot of this to write. 
+
+Transcribe from conclusions doc
+
+Let's copy from sw-system.tex, to get the macro calls right.
+
+Maybe vtan of M31 is ok?
+
+Maybe the next collaboration meeting? Or following some sort of concerted effort?
+
+
+
+Hah! :-)
+
+An easy fix, now in place in the VICS82_stage1 branch. chrissnyder can you either pull this across and test, or implement yourself by changing "400" to "900" at the appropriate place please? Thanks!
+
+Got some feedback about this, and it does seem to be an issue: Recents are not being kept on the classification interface profile page, and annotations are not triggering subjects into the My Candidates collection in Talk... I guess this is due to the server meltdown in some way?
+
+Suggestions from Els:
+
+Emphasise difficulty early
+Point out QD more strongly
+Fend off discouragement
+
+
+Hi edpaget!
+
+Just checked out the VICS82 images in Tools - looks like we have a couple of issues:
+
+Image is displayed small, in the left hand corner, like in QD - can we initialise the offset and zoom so the image fills the viewer please?
+
+Sometimes just K band is available, leading to a grayscale image somehow
+
+
+The VICS82 images are displayed at native resolution in Talk, and so appear rather small. Can we have them displayed the same size as the CFHTLS images please, on a canvas(?) that is 440 pixels wide? This is how they appear in the classification interface - good if we can keep that consistent across QD, Talk and Tools...
+
+
+
+Comment the QD code so edpaget can read and transfer to Tools...
+
+See  ! :-)
+
+As discussed on email - to make it easy for us to analyze the classifications with SWAP without changing to a new database. Thanks chrissnyder !
+
+As discussed on email - opening here so you have something to close later, parrish! :-)
+
+aprajita is working full speed on this issue already - I am just posting it so that it appears on the list, that we are about to stare at in our telecon.
+
+We now have a spacewarps twitter account - could we put a "Follow Space Warps on Twitter" link to it on the landing page? I tried to assign this to Grant but I don't see his name on the list... If the answer is "no, not right now" please do just close this up - it's just I know Grant was working on getting social media links on to projects, so thought he might like to sprinkle some on ours!
+
+So the spotters can put a bio to a Talk name? Seems more useful than twitter handles.
+The link could either go to a Talk "profile" page, or be left blank.  The dev team's twitter handles can stay though, since they don't hang out in Talk much.
+
+Hi!
+
+We noticed the VICS82 landing page is a little sparse, we guess to make it easier for the viewers to Start Classifying. Do you think the lack of links will lead to fewer people arriving in Talk though? Interested to hear a little more about the reasoning behind the design of the landing page!
+
+BTW we snuck the galaxies-behind-other-galaxies tagline back in, because we like it so much. Hope that's OK.
+
+
+
+Check randomly selected images for lenses (!) and then send parrish the list of VICS82 image IDs that we want to use as training duds. This is *veryimportant - if we don't have duds as well as sims, the SWAP agents will not be able to interpret the classifications.
+
+Currently, when a sim is marked, isLensMarked is assigned the value "0", *no matter where you click. It's as if the alpha channel mask was missing... 
+
+For now, I've implemented the following hack: *anyclick in a sim image is interpreted as a successful lens identification, with corresponding congratulatory feedback message. This will at least allow the SWAP agents to be trained, but represents quite a low resolution system. 
+
+I'd like to assign this to jgeach but I can't add him as a collaborator - but I'll pass the issue along to him to see if there's something up with the alpha channel images.
+
+The VICS82 images are 199 pixels wide, but we would like to display them in the usual 441 pixel wide frame. Is this possible in the QD? At the moment, the QD images appear quite small, and in the bottom left hand corner of the frame. Its passable, but not optimal!
+
+
+
+I've had this bug before: the tutorial message boxes display the names of the translate text variables, not their values. I *thinkthe problem is that there is some syntax error in the messages but I cannot for the life of me find it. Halp?
+
+We would like to start a new database for the classifications once the VICS82 project is live. The CFHTLS database is already large, and as this is a new project we think it would be best to put the classifications in a new database. Maybe this was going to happen automatically? Let us know if you see any problems with starting a new db! 
+
+Needs testing. For reference, marker placement is hacked in classifier.coffee around line 358, while marker position is read by function getMaskValue in tutorial_steps.coffee. 
+
+The VICS82 data have a mixture of provenances, so are hard to display well. To make the QD views look good, we need to do two things:
+
+1) Read the headers for the MZP_AB keyword, and then use its value to multiply that file's image by 10.0**(0.4*(30.0 - MZP_AB)). Amit almost certainly coded something like this up already, but the keyword needs checking. 
+
+2) Set the QD parameters according to the provenance of the image, again by reading the image header. PROV = 'V' means one set of parameters (presets 0, 1 or 2) while PROV = 'C' in the header means we need to use (new) presets 3, 4 or 5. This might mean writing a new method in wfits. 
+
+Can you point me to the wfits code please so I can look into these issues? I may also need assistance implementing changes in January. Not sure who's best to helpf with this, chrissnyder? or edpaget maybe? Thanks!
+
+Possibly because the app was looking for u g r i z images, not i j Ks. The VICS82_stage1 branch now has this corrected, but I still just see the "Oh no!" unavailable data error. This needs testing when the full PNG + FITS data are ingested.
+
+Feedback text has been tweaked for VICS82 - needs testing when sims and duds are ingested on dev server.
+
+Can we please have the following subjects as the two tutorial ones please?
+
+VICS82_5000179 = sim
+
+Any random group from the training subjects (ie VICS82_2*) would do for the dud image. These will be coming form Jim tomorrow - if he doesn't provide a duds sample, please prompt him for one! We explained what was needed yesterday.
+
+Thanks!
+
+
+
+After updating the main guide, we mustn't forget to change the thumbnails on the quick guide!
+
+Maybe do this last, after editing SG?
+
+Moved from #38:
+
+Make a new "HOME" tab where we have
+
+tell users what they are looking at i.e. IR telescope images
+targeted search & types of targets
+random images from the basic target types
+characteristic minimum size (PSF)
+noise looks blobby/dotty learn to recognise noise from faint objects
+comparison to CFHT-LS
+different colours
+shallower
+smaller images
+lenses will be harder to spot
+
+To the VICS82_stage1 branch, that is!
+
+Ive had this a few times now - I open a subject in Tools from Talk, and don't see any data, just a grey background and a black rectangle n the bottom left hand corner:
+
+
+
+
+
+A leaky pipe?
+
+Viz, 
+
+Some sort of subject renaming problem?
+
+Hi Michael,
+
+Getting reports that the False Positive training images have unavailable data in the quick dashboard. Is that our fault? 
+
+As back-up training images...
+
+When SW Refine is done, we'd like people to carry on hanging out in Talk. Let's write a blog post about this, pointing people at the modeling efforts, to encourage them to hang out there. 
+
+From Eli and Eduardo...
+
+Targeted not blind search!
+
+Zuntz et al validated im3shape on the GREAT08 dataset, for which truth values are available. Seems sensible to experiment on this before submitting to GREAT3? 
+
+What's a sensible date to aim for to get ourselves onto the leaderboard?
+I guess it depends a lot on the SLAC set up time.
+
+"Guards! Bring me the forms I need to fill in to have this person taken away"
+   - Futurama
+
+djbard, we need to send dstndstn the link to the SLUO form and help him through that process. Would you mind please?
+
+Tom Glanzmann and Joanne Bogard have agreed to help us run at scale at SLAC, with Richard Dubois overseeing. (This is a good example use case for us.) THey need to be brought up to date with the challenge and our plans/needs. drphilmarshall to get this started, djbard to meet them in person next week?
+
+Suppose we assign default (ie uniform) Tractor priors to all parameters, including e1 and e2, and draw N posterior samples for each image. Can we implement a layered model after the fact to infer the intrinsic ellipticity distribution and shear field simultaneously? If we know the shear is constant in sky patches that will make life easier; if we can postpone the top layers of inference we can run in a pleasingly parallel  way (and so do more experiments).
+
+Bridle et al started trying to measure shear by fitting blobs; Kuijken et al were not far behind. These days Bridle's method goes by the name Im3Shape and is calibrated to sims to solve the ellipticity prior problem. In between, Miller, Kitching et al applied some clever tricks to their own likelihood-based method, Lensfit, and applied it to the (multi-epoch) CFHTLens data. Lately, Bernstein has got interested in simple model fits, and their limitiations - with Armstrong. Links to follow, drphilmarshall assigned. Bibtex file to be pushed before this can be closed.
+
+Looks inconsistent with the LICENSE file?
+Could be nice if the README had some encouraging words for how to collaborate on tractor development and use?
+
+Hi Michael!
+
+Looks like we are basically done at stage 1 now - the undecided subjects are just rattling around waiting to hit max_classifications and retirement. Can we accelerate this by setting max_classifications to 20 please?
+
+Our current thinking is that this value should be OK for stage 2 as well.
+
+Thanks - and happy thanksgiving!
+
+
+
+Check out the example as displayed by sphinx:
+
+
+
+Some suggestions for making this more readable/attractive:
+
+Keep lines to 72 (?) characters long!
+Format header to be better-parsed by sphinx 
+Change the background color in the conf.py file to match the rest of the theme
+Maybe use docstrings throughout script to explain the use of various utensils? (Later)
+
+I think we want the sphinx output to be as simple as possible for this project. At the moment I see all sorts of extraneous verbiage about modules and subpackages etc that just look confusing. Can we make sphinx produce much more streamlined output, resulting in html pages that are much nicer to navigate?
+
+The PyCS documentation might help here too:
+
+
+
+Show source is useful for seeing how rst files work. The PyCS conf.py is here:
+
+ 
+
+
+GitHub pages seems to want full paths to the raw stylesheet files, rather than the relative links that sphinx makes. Maybe the internet knows a workaround?
+
+How hard can it be to make white red and gray sphinx pages?
+
+I think we want this so we can all push to it - and its better for the recipe book to be hosted at github than from my SLAC public_html folder...
+
+
+
+Just to keep everything together
+
+I guess we'll need a domain name that does not contain ~pjm.
+
+Via sphinx.
+
+Generating a confluence page on ho w to run at SLAC in the process, perhaps?
+
+A confluence page to start with.
+
+Come on, how hard can it be.
+
+The SWAP retirement rate has been very low - a few tens per day - for several days now. I think maybe we have reached the point where the remaining active subjects are just bouncing around at intermediate probability, and may continue to do so until they hit their max_classifications limit (or a high skill classifier comes across them). I will investigate this.
+
+If I'm right, we might consider resetting the max_classifications to 20 or something, and finishing sooner rather than later rather than eking out a few more detections/retirements for the next weeks. What do you think? 
+
+In any case, there are bound to be a bunch of subjects that finish with probabilities higher than the retirement threshold but lower than the detection threshold. Should we put all of these into Stage 2 along with the Stage 1 detections? (That would make about 7000 subjects, I think, looking at the most recent report). Or should we reject them all? While investigating, Ill see what would happen to the false negative rate in the latter case - at the moment, we know that the false negative rate is 6.6% for the case where we keep all subjects with p > retirement.
+
+I'm trying to find the parameter that controls the speed with which new images appear from the righthand side of the classification interface - I think that if we slow the arrival of the images down, it will encourage people to take their time over the refinement step! What do you think?
+
+Hi Michael,
+
+I'm having problems marking sims: no matter where I put the marker, isLensMarked is coming back with value 0 from checkImageMask, which I think means there is a problem with the images:
+
+  checkImageMask: (x, y) =>
+
+
+
+
+
+
+
+These sims, do they have an alpha channel image? They should do, but maybe something got mixed up?
+
+Once this is resolved, I can check that the annotation positions are correct (see issue #22)
+
+Specifically, the marker appears so that the bottom of the orange cross hairs *circleappears where the cursor tip is. This happens in both the translations and CFHTLS_stage2 branches' apps. The subject is positioned in exactly the same place as in the live web site (where the markers appear correctly centered) - but I guess this could be a css issue if there are hidden annotation canvases in use? 
+
+I'll check to see if this happens with the zooniverse translations branch app... 
+
+This might also be a translation-related problem - when a sim is found, the congratulatory feedback is not displayed, because the tutorial variable is not set properly...
+
+!sim-found_error
+
+
+Not sure if this is a translation problem or not - but when sims appear and are missed, the following error appears in the console:
+
+!sim-missed_error
+
+
+
+
+We have CFHTLS LRGs, with i and redshift, but these do not span the full range of OM10 lens galaxies. Better idea (TT): make catalog of SLAC, SL2S and CANDELS LRGs and lens galaxies, and tabulate:
+
+RA  DEC  redshift  vdisp  u   g    r   i    z   Reff    survey
+
+We'll need to check that the objects from the different surveys are consistent with being drawn form the same population but this should be fine...
+
+
+Need to either 
+
+a) understand how to manipulate structure provided by pyfits.getdata
+
+or 
+
+b) make astropy tables work.
+
+I prefer b) so will try hard on this first.

@@ -1,0 +1,2039 @@
+WL null test successes as diagnostic metrics
+
+Do you need a small GitHub "Team" created?
+
+Summary slide for final plenary
+
+Getting Started with DM
+
+Making Twinkles work in the Conda DM installation
+
+Installation notes, pitfalls
+
+Visit metadata analysis 
+
+Mirror PhoSim / DM Level 2 output folders at NERSC
+
+Incorporate repeatability plot in workflow
+
+Impromptu Twinkles analysis discussion, this afternoon
+
+What do the Run 1 lensed quasars look like?
+
+Strong Lensing Session at the Collaboration Meeting
+
+PEP8 style
+
+Final developer demographics figure
+
+CI2 software study group meeting, tomorrow Weds March 2 at 0900 PST. We'll discuss the reviewers' feedback, your progress in responding to it, and the plenary and tutorial sessions at next week's collaboration meeting
+
+Comparison with SNLS/CFHTLS
+
+Cannot download images
+
+License information in source files, README etc
+
+DM setup failure, notes needed 
+
+CI1 references
+
+Make instance catalogs "at scale"
+
+Should we refer to an anticipated "Data Management Plan"?
+
+CI1 appendix table formatting
+
+Consult the LLNL development team(s)
+
+Monolithic reproducibility discussion
+
+Production scale
+
+Infrastructure support role FTE fractions
+
+Virtual machines
+
+DESC publication requirements on experienced people and their legacy toolkits
+
+The friendliness of the DESC development environment
+
+Context of previous survey projects
+
+"Learn as we go" 
+
+Investigate globus instance catalog file transfer
+
+Light curve quality metric
+
+Test data
+
+LightCurve class
+
+Light curve visualization
+
+Data Catalog user guide
+
+Run 1 Risk: SNe may not make good CoaddSources
+
+SED file overload, organization
+
+PhoSim "smoke test"
+
+Light curve quality metric
+
+Assemble Ground Truth light curve
+
+Create postage stamps
+
+Visualize light curves
+
+Avoid using the same CatSim galaxies for both SNe and lensed AGN
+
+Run 1: Turn on centroid file outputs
+
+Should we hold off work on our own issues during CI2 review?
+
+Pre-review cleanup
+
+Improve discussion of "shared code"
+
+Improve reproducibility wording, motivation for practices
+
+Thoughts on presenting CI2 at the DESC meeting
+
+Who's doing what?
+
+Revisit preambles to improve framing of content
+
+CI2 software study group meeting, tomorrow Weds Feb 24 at 0900 PST. We'll discuss any issues that must be resolved before sending our report out to be reviewed
+
+Add examples
+
+Update "Add examples" branch with others' work
+
+DM Level 2 processing of Run 1 images
+
+Serve Run 1 data via Data Catalog
+
+Discussion: generating PhoSim inputs outside UW
+
+Run 1 input file transfer
+
+Run 1 Data Generation Start
+
+TJP use case
+
+Publications Policy and Software Development
+
+Shining example of well-cross referenced use case
+
+Investigate DM workflow/dataflow plans
+
+CI2 software study group meeting, tomorrow Weds Feb 17 at 0900 PST. We'll discuss our recommendations, how our use cases are going to illustrate them, and the CI2 review
+
+Consensus wording
+
+Merge in John's easy framework recommendations, tidy up
+
+Careful reading of CI2 principles and practices
+
+Reworded principles and practices
+
+intro.tex needs checking in
+
+OM10 lens galaxies all have 1" effective radius 
+
+Check that 1 visit per filter per night for 1 season makes sense for Run 1
+
+Get TDC1 lenses
+
+NERSC workflow plan
+
+Ops roles update, from Richard
+
+Re-word text on publication code
+
+DESC Framework development recommendation
+
+Workflow Engine Comparison Study recommendation
+
+Use case 2nd pass: read the CI2 report and upgrade your use case
+
+A \recommendation macro is now available for use
+
+Merge work from master into OpsRolesUpdate-RXD
+
+Propagate agility use cases into master
+
+CI2: so many branches! Current PDF for temporary convenience
+
+CI2 software study group meeting, tomorrow Weds Feb 10 at 0900 PST. We'll discuss each piece of our report, and the remaining study that needs to be done 
+
+Assemble tutorial plan, get some feedback
+
+Worked Scott's agility examples into two new use cases, closes #86
+
+Moved use cases to chapter 2, where they can illustrate the recommend…
+
+Run 1 Progress Report: meet today at **12:30pm**?
+
+Run 1 Plan
+
+Hack day project ideas
+
+Hacking the Run 1 dataset validation at the March collaboration meeting?
+
+Possible hack day project: automatic coding standards with a "DESCBot"?
+
+Hardware considerations
+
+Framework needs, recommendations
+
+Move use cases to an appendix (or switch to part 2)
+
+Scott's Agility Example Use Cases
+
+CI2 review
+
+Interaction with DM: WL shape estimation Plans A and B as use cases
+
+Level 3 vs Level 4 code: discuss
+
+Tidy up infrastructure roles table and text, check rationale is sufficient
+
+initial plan
+
+connect people
+
+surface brightness detection limit
+
+CI2 software study group meeting, tomorrow Weds Feb 3 at 0900 PST. We'll discuss the rationale for our infrastructure support roles, and the list of things we need to do to get our report finished by the collaboration meeting 
+
+repo reorganization
+
+Move module directory; add unit test code; setup files; update README
+
+Module structure
+
+Tiny example dataset
+
+Comparison with reference light curves
+
+Module structure
+
+Simplest possible implementation
+
+CI2 progress report - slides to show the leadership on Monday Feb 1st
+
+Monitor code, for light curve extraction and validation
+
+TDC1 demonstration data
+
+PyCS demo1
+
+Principles, standards etc re-write
+
+CI2 early internal review
+
+Revisit CI2 introduction
+
+Environment recommendations
+
+Operations personnel: CI2 report scope
+
+Recommendation macro
+
+Environment section: introduction, reorganisation, content
+
+Introduce, define framework and infrastructure
+
+Add Software Infrastructure Operations Roles table to the CI2 report, explain in text
+
+Operations Roles: Workflow Architect
+
+Richard's operations roles table
+
+WFIRST + LSST weak lensing: science project definition, figure of merit
+
+WFIRST + LSST supernovae: science project definition, figure of merit
+
+WFIRST exoplanetary microlensing: science project definition, figure of merit
+
+CI2 software study group meeting, this Weds Jan 27 at 0900 PST. We'll discuss "Software Operations Roles" and their prioritization, survey our outstanding issues, and make sure everyone has writing tasks for Thursday and Friday
+
+Sky brightness models in DESC SSim meeting, in 5 mins
+
+Software Infrastructure Operations Roles Table
+
+CI2 software study group meeting, tomorrow Weds Jan 20 at 0900 PST. We'll discuss "Licensing and Availability," more findings about the use cases, and what we need operations people for
+
+DESC code definitions
+
+Dedicated ops people to oversee package mgmt, code quality, etc
+
+Workflow/dataflow needs, recommendations
+
+External packages: needs, good practices, scope etc
+
+Standards: categories, importance level etc
+
+Principle of reproducibility
+
+Principle of agility
+
+Forecast figures, for perusal
+
+Section 7 draft text: summary
+
+Section 6.3 draft text: cosmic complementarity
+
+Section 6.2 draft text: accuracy outlook
+
+Section 6.1 draft text: precision outlook
+
+Section 5 draft text: cosmological parameter inference
+
+Section 4.3 draft text: lens environments and line of sight effects
+
+Section 4.2 draft text: modeling the lens mass distribution
+
+Section 4.1 draft text: measuring time delays
+
+Cartoon illustrating line of sight effects on time delay, image separation?
+
+Wavefront diagram from T&E2015
+
+Section 3 draft text: theoretical background
+
+Then vs. now (time delay/light curve and lens image) 2-panel historical figure
+
+Section 2 draft text: brief history of time delay cosmography
+
+Section 1 draft text: introduction
+
+H0 measurements as a function of time, cautionary figure
+
+Lensing cartoon for introduction
+
+Paste plan into latex file
+
+Issue initial writing assignments
+
+Set up CI2 report structure to enable week 2 writing assignments
+
+Add compilation notes to CI2 home page
+
+Ill conditioned alm covariance matrix, monopole and dipole
+
+Just catching up, delete this message
+
+Software Use Case: WL: PSF Interpolation
+
+Software Use Case: TJP: Joint Cosmological Likelihood Analysis
+
+Software Use Case: PZ: Test and Train Algorithms
+
+Software Use Case: CS: serve mock catalogs
+
+Software Use Case:  Re-run Workflow After Modification
+
+CI2 software study group meeting, tomorrow Weds Jan 13 at 0900 PST. We'll discuss "DESC Code" and your findings about your use cases
+
+Software Use Case:  Large-scale Generation of Simulated Data
+
+EWS as indicator for non-stationarity
+
+Start WFIRST chapter
+
+Illustrative light curves
+
+Scientific reproducibility and its relationship to software standards and tests
+
+Software Use Cases, due Wednesday January 13th
+
+Update CI group on workflow and repository needs 
+
+New AGN text from Vishal needs editing in
+
+Notes, and a new timeline, from the AAS editorial get-together
+
+CI2 software study group meeting, tomorrow Weds Jan 6 at 0900 PST. Sign up for use cases!
+
+Introduction chapter AAS presentability - statement of purpose?
+
+Solar System chapter AAS presentability
+
+AGN chapter AAS presentability
+
+Discussion of TDC2
+
+Galaxy chapter AAS presentability
+
+ZenHub decision point
+
+`\requirement{}` LaTeX command
+
+Update Science Roadmap with revised Twinkles 1/2 plan
+
+Twinkles requirements brain dump 
+
+SVD tests
+
+End of year / pre-AAS tidy-up
+
+AAS2016: editorial meeting plan 
+
+Software use cases from WL and TJP
+
+Software use cases from the 2014 DESC use case exercise 
+
+Software use cases from the coordinators/spokesperson team
+
+Software use case collection
+
+"Production" code
+
+CI1 report skeleton
+
+Use case collection board
+
+Weekly CI2 Software Study Group Meetings in January/February
+
+Recommendation Suggestion Board
+
+CI2 report skeleton
+
+Use case template
+
+Old Use Case documentation
+
+Is there a 2% photometric reliability floor due to clouds?
+
+Run 1 markdown docs are out of date
+
+Software Study Group kickoff meeting: Thursday 12/10, 0800PST, BlueJeans
+
+Milestones
+
+Twinkles RQ face-to-face discussion in Davis
+
+RQ: Twinkles 1 Scope Discussion
+
+Skeleton of Twinkles 1 requirements document
+
+Auto-build of SRM webpage with pdf2htmlEX
+
+Auto-generation of Confluence Task Lists
+
+Response matrix
+
+Check "Guidelines for Authors" for confusing wording
+
+arXiv posting timeline
+
+Environment set-up
+
+Post-Tucson Issue Clean-up
+
+Rolling cadence notes in the "Special Surveys" chapter
+
+IMPORTANT: All forks and clones need deleting and remaking ASAP
+
+Solar system
+
+Redoing the light curve figures PR
+
+Re-doing the revised variables PR
+
+Magellanic Clouds chapter needs science sections, figures of merit
+
+Magellanic Clouds in its own chapter
+
+Deep Drilling Field / Special Survey Re-organization
+
+What were the Deep Drilling Field / Special Survey proposals in the Tier 1 OpSim Runs?
+
+New transients and variables chapters need editors
+
+AGN chapter (issue #166)
+
+Paper draft reorg
+
+Notes are lagging behind
+
+Try AGN in its own Chapter
+
+Upgrade SWAP to read Panoptes/Nero output databases
+
+Make Panoptes ArcFinder Demo
+
+Roland's visit to KIPAC: Music discussion
+
+Cosmological sky definition
+
+Resources Introduction, Basics
+
+Private/public transition
+
+Recruitment
+
+CosmoSIS notes
+
+Markdown or LaTeX for computing model documents?
+
+LSST DM Stack Reading Group, Thursdays at 1200 PDT on BlueJeans
+
+Einstein Amazeballs
+
+agn.tex contains a raw URL, needs hyperref-ing
+
+Issues need labels, milestones and assignments
+
+Reference to Twinkles task force
+
+Check SL key projects for validation deliverables
+
+Address reviewer comments on Table 3.1
+
+Master README could introduce individual folders
+
+Unix folder needs a README
+
+SQL folder needs a README
+
+Python folder needs a README
+
+Bootcamp materials need to be licensed to allow redistribution
+
+Version tagging
+
+Split Lesson 6 materials into required sections
+
+Faux pas! LSSTC not listed on the sponsors webpage
+
+Bayes CV should be a separate project
+
+Tidy up cluster profile fitting notebook as demo?
+
+Author names/contact details
+
+Check in Lesson 7 materials
+
+Complete Cepheids Period-Magnitude notebook from Session 2
+
+Urgent: Disable the QD, please!
+
+Some attempts to make the QD work. Images now appear, but scales are …
+
+Friday before coffee: nested sampling
+
+Resources in support of hierarchical models and PGMs blackboard session (after coffee on Friday)
+
+Import notebook and lay out plan for Thursday morning session 2
+
+Probability calculus notes
+
+Commander tarball has two copies of *00051.fits, in each of apparently four "sets" of posterior samples
+
+Welcome to the SRM!
+
+Lay out Session 6: Model Evaluation
+
+Lay out Session 5: Coping with Complications
+
+Check About notes
+
+Add students to homework repo
+
+Message to chapter editors
+
+Editors' meeting, 2015-09-21: action items!
+
+Schedule on website is out of date
+
+Tutorial: marking step cannot accept marker clicks
+
+Sim feedback messages are incorrectly positioned
+
+Start Glossary!
+
+SS and DA section coherence
+
+Public release?
+
+Experimental correlation function notebook for Session 1
+
+a1835_xmm/M2ptsrc.txt needs to be checked in
+
+Time for a new pip package?
+
+Summary statistics in XrayImage 
+
+Lay out Session 2
+
+Build FirstLook at the SDSS dataset into Session 1
+
+Introduction notebook for Lesson 1
+
+Build XrayImage "FirstLook" into Lesson 1
+
+Start private homework *development* repo 
+
+Thinking about CMB lensing constraints
+
+Twinkles timeline: set dates
+
+Progress bars!
+
+PGMs for initial inferences
+
+Sunday night meetup?
+
+Starter Hacks!
+
+Email to hackers, to get them started
+
+We have a wiki for Astro Hack Week 2015! It's almost ready to publicize, just needs some logistical details
+
+Lessons folder, notebooks
+
+Website cleanup
+
+Links to YouTube "Git and GitHub Tutorial"
+
+Let's encourage pull requests from LSST scientists!
+
+Existential angst
+
+Enhanced Twinkles framework deliverable needs cross-reference from CX8
+
+Homework claim form and script to interpret it
+
+Generative model / sampling distribution demo
+
+XrayImage Metropolis playground
+
+Access to the Private Homework Repo: come and introduce yourself!
+
+Twinkles cross-references
+
+Automatic \deadline dates
+
+SL5 dataset choice
+
+SL3 contingency plan
+
+Homework instructions
+
+Have XrayImage exploration notebook download the data it needs
+
+Switch to astropy
+
+Add image display code to XrayImage exploration stub
+
+First look at the Cepheids data notebook, based on straightline.ipynb
+
+SDSScatalog notebook stub
+
+XrayImage example notebook stub
+
+What to use as our StraightLine dataset?
+
+Start examples and exercises
+
+Getting Started instructions
+
+Read "Quick Guide to Active Learning in Lectures"
+
+git and GitHub Tutorial - your second chance to attend!
+
+Posterior sample CMB T maps?
+
+Hacking the Quick Dashboard for the CFHTLS Reboot
+
+transfer this to KIPAC org?
+
+Separate personal computing from SLAC computing?
+
+Python installation instructions
+
+Better README
+
+How do I resolve a conflict?
+
+`map2alm` output coefficients need multiplying by `(-1)**m` and complex conjugating in the regime `m < 0`
+
+Macros for DC start and end dates
+
+Summary Table of DC Datasets 
+
+Datasets and Software tools need different typesetting
+
+SL: implement cross-refs to dataset (DA) key projects
+
+References section, some missing bibtex entries
+
+CMB T map alm's: units, imaginary parts
+
+CX4: individual WGs to sign up for their deliverable, and add timeline
+
+Compound lenses extensions
+
+Cosmological simulations section does not compile
+
+Fix bugs in SW app
+
+Paper 2 referee response: colors in Fig 11, acknowledgments
+
+Paper 1 referee response: very minor revision to figure captions, acknowledgments
+
+CFHTLS FITS images displayed in dashboard/tools viewer with VICS82 settings?
+
+Collection list not found by app
+
+CFHTLS QD is requesting IR (iJKs) FITS data
+
+Unsigned-in users cannot leave markers or advance to Next image
+
+Classification counter keeps resetting?
+
+Potential f_n to Temperature a_lm "R Test"
+
+Reconstructing the 3D potential at recombination from the Planck CMB T map
+
+Adding all workshop contributors to the author list!
+
+Workshop feedback form
+
+No tutorial in rebooted app?
+
+No sims, only duds in rebooted app?
+
+Editing files on the browser can cause problems
+
+Higher night-to-night cadence in extragalactic sky?
+
+Suggestion board for new `OpSim` runs
+
+Suggestion board for future `OpSim` runs
+
+Discuss Science Book in introduction
+
+Credits: hyperlinked author names
+
+SULI report: figures need checking in
+
+Friday Morning White Paper Plenary: Your 4 Minutes of Fame!
+
+Phil's Thursday White Paper Plenary Plan
+
+Hyperlinked LSST 2015 cadence exploration chapter
+
+Your project's URL is incorrect/incorrect/incorrect/incorrect
+
+Next task not being picked up correctly
+
+Correct file name for SULI report PDF?
+
+Add notes on "How to Get Involved" to the preface
+
+SULI report: check in figures
+
+SULI report: discussion on scaling up the computation
+
+timeit: units, garbage collection
+
+White paper metric concepts to be included in the preface
+
+Wiki needs to summarize summer 2015 progress
+
+Automagic dataset tables from Google spreadsheet csv output
+
+Galaxy / astrometry synergy
+
+Feedback on chapter/section design?
+
+AGN as non-periodic variables?
+
+Bin galaxy kappas, gammas into WLmap objects for plotting
+
+Navigation bars added to all current sections, and template.
+
+Script for changing reference labels
+
+Special surveys chapter needs sections, preamble
+
+Deep drilling field chapter needs sections
+
+SL KPs need DC1 tasks
+
+Deep Drilling doesn't have any section lead names
+
+Supernova section needs sketching
+
+AGN section needs sketching
+
+Dithering section needs sketching out
+
+Astrometry chapter needs sections
+
+Galaxy chapter needs initial notes
+
+Solar system chapter needs sections
+
+Chapters need preambles!
+
+Paint sizes
+
+Lens galaxies too faint?
+
+SDSS LRG catalog for painting and positioning
+
+Observing Strategy in the SRM?
+
+Lensed SNe
+
+Twinkles dataset generation as CX KPs
+
+Light curve extraction as a CX KP
+
+SL/SN cross links
+
+Planck data
+
+Figures need checking in
+
+Is `app/lib/feedback.coffee` no longer used?
+
+Landing page formatting
+
+FAQ not working
+
+Universal SW app
+
+WL: The Need for Speed
+
+Ryan's python code needs to be merged back in
+
+PGM needs updating
+
+Makefile does not include bibtex command
+
+Paper 1: Figure 6 clarity/readability
+
+Paper 1: Better color contrast on trajectory plots
+
+Shear in regions with strong lensing
+
+Ellipticity sticks and shear quivers must be plotted to scale
+
+Start SULI report: correlation function notes, model check program description
+
+Label plots with LaTeX
+
+Getting started: improvements to the white paper documentation?
+
+Tables of Datasets: what else should be included?
+
+SL: minor fixes
+
+SL: clarify lensed supernova work
+
+SL: inference theory for ensemble analysis as deliverable
+
+SL: notes/deliverables on requirements (RQ) for DM
+
+Derive xicross from Jarvis xim and xip
+
+Hyperlinks and labelling consistency
+
+SL: table of challenge datasets needed
+
+Glossary
+
+Magnetron code test
+
+Survey Strategy Task Force?
+
+Paper 1: how was purity estimated?
+
+Radio/gamma ray time series correlation paper
+
+Previous characterizations of blazar light curves
+
+Allowed ranges for observing strategy modifications
+
+I'm an SVN user, and it was fine. I hate git and want to smash it with a log
+
+Each FAQ needs a "Back to top" link
+
+Make separate tex files for each section
+
+Add "Getting Started" link to front page
+
+Replace html with markdown, for easier editing
+
+FAQ headings need to be hyper-linked
+
+Reword preface to function better as guidelines for section leads
+
+All SL key projects need deliverables
+
+Supernova work needs issuing 
+
+Milestone and key project macros are not properly hyperlinked
+
+Neronov et al 2015: microlensing in PKS1830-211
+
+Report cards to summarize inferences from each lightcurve dataset
+
+Lightcurve length dependence?
+
+Are the DNest chains converged?
+
+B0218 flares in multiple bands?
+
+More blazars!
+
+Null (no-lens) model tests
+
+Rumbaugh cannot be issued with tasks until he is a collaborator
+
+Paper LaTeX file
+
+Model description
+
+Degeneracy between time delay, magnification ratio and other hyper-parameters?
+
+SLAC production code is not under version control
+
+Do you mind if I try submitting an issue here, just as a test?
+
+Code not touched since 2012?
+
+Paper 2 Referee Report
+
+Paper 1 Referee Report
+
+Stage 2 Re-classification of eSWAP CFHTLS Stage 1 candidates
+
+Can we remove srm.pdf from the repo now that it is being auto-compiled?
+
+Two slide update for WL group meeting 
+
+Catalogs need to be able to convert physical positions to world coordinates
+
+WLMaps need to be able to plot themselves in world coordinates
+
+Alignment of foreground galaxy/halo catalogs and convergence/shear maps
+
+ipython notebooks do not open: "Unreadable Notebook global name 'NBFormatError' is not defined"
+
+Twinkles 2015 Taskforce proposal
+
+SL key project titles
+
+example/example_catalog.txt is missing?
+
+More detailed context for improving high res imaging data: MSD/profile degeneracy
+
+Catalog class
+
+Shearmaps
+
+SL DC1 key project: lens environment
+
+SL DC1 key project: Twinkles 1.0
+
+SL DC1 key project: TDC2
+
+SL introduction
+
+Reorganisation before arxiv submission
+
+Pre-Workshop MAF Tutorial?
+
+Collect feedback/input on initial SL plan from SL WG
+
+SL timeline plot
+
+SL key projects and milestones
+
+Gantt charts
+
+Recover from mangled merge 
+
+New plot files seem to be missing?
+
+username case sensitivity in project urls
+
+Workshop registered attendees list
+
+Time Delay Lens Cosmography as a template white paper section
+
+First attempt at schedule for Fall 2015
+
+First draft of PHYS366 course overview
+
+Make milestones for course preparation
+
+Email list for section leads
+
+Check final proofs
+
+Phil's edits
+
+Updated CFHTLS paper abstracts to submitted versions
+
+Resurrect SW CFHTLS Stage 1 website so we are live when publicity goes out
+
+Search box should appear initially empty
+
+GPL licence?
+
+Embedding javascript in Panoptes markdown guide files
+
+The Need For Speed: opt out of "end of classification" step?
+
+Painting/positioning: take LRG, QSO files as input kwargs
+
+Title
+
+Initial abstract
+
+Switch from atpy, pyfits to astropy
+
+Painting demo notebook
+
+Paper 1 & 2 cover letter
+
+Anu's final Paper 1 queries
+
+Demo notebook
+
+Summer 2015 project planning 
+
+Implement Christine's corrections
+
+Phil's edits to paper 2
+
+GMM approximations to the prior: necessary vs sufficient conditions
+
+Isolation criteria in latex
+
+"Known Lenses" not being classified?
+
+Questions about high power classifications
+
+CNN as a source of interesting viewing?
+
+eSWAP hierarchical model
+
+eSWAP abstract
+
+eSWAP paper storyline
+
+Attempting to make candidate-list of CFHTLS candidates
+
+Date of Second Announcement
+
+Workshop registration page
+
+Draft second announcement 
+
+Add MAF installation and testing material to website
+
+Schedule time for telecon meeting of all white paper section leads
+
+Add white paper chapter lead names to the design document
+
+Science Team webpages hosting various CFHTLS project results
+
+Sign and return ARAA copyright forms
+
+Check ARAA galleys
+
+Conditional SWAP agent confusion matrices (P("LENS"|LENSED_QUASAR) etc)
+
+Reduce plot file sizes
+
+Results tabs label text background color
+
+Candidate-list formatting
+
+Formatting of discoveries tab content-header
+
+Landing on results page does not lead to being shown any results!
+
+Bare bones CFHTLS results pages, ready for launch
+
+Time-variable skill?
+
+Simplest possible toy problem?
+
+Write up HB theory in a latex document
+
+Hypothesis?
+
+Visibility: README, plots in notebooks
+
+Best-effort eSWAP analysis
+
+Phil's comments on the conclusions
+
+Paper 1 figure files are too big for arxiv
+
+Provide summary of VICS82 project
+
+Move VICS82 results to VICS82/Discoveries and re-instate standard homepage
+
+Better formatting of "thankyou" content on Contributors pages
+
+Candidate lists on Discoveries pages
+
+Spacing on results page
+
+Provide summary of CFHTLS project
+
+Made results pages translateable
+
+Move most of appendix into main paper, and check consistency throughout
+
+CFHTLS and VICS82 project participants lists
+
+Address Tom's comments on paper 1
+
+Calculations in databases?
+
+Bibtex for IBCC paper
+
+Re-order and re-word results section to put sample first, crowd second, speed third
+
+Sprinkling supernovae 
+
+Get website up to date
+
+Include details of color representation
+
+SW atlas: catalog schema
+
+Implement ipad-scribbled comments into paper 2 latex
+
+New lenses section, text
+
+Simpler completeness-purity plot
+
+Address Anupreeta's comments
+
+db.place() method, to match lens galaxies with real galaxies and adopt sky positions
+
+Write out OM10 lensed quasar images as input catalogs to image simulator
+
+Smooth parameter must be a (not-necessarily integer) number of pixels
+
+Optimal binsize
+
+demo using new options
+
+Simplest possible inference example
+
+Prettier triangle plots
+
+PDF presentation
+
+Extract numerical values for mass measurements, compare with Gonzales
+
+Clarifying and focusing systematics plan
+
+Add workshop schedule/about text to website
+
+Tweak leads invitation
+
+name
+
+Figure 3 (dud gallery) needs panels without insets
+
+"Skill" vs "Power" in Paper 2
+
+Merge bibtex files into single references.bib file
+
+"Stage 1" and "Stage 2" macros
+
+Dependence on Yao's scripts
+
+Finish speed section
+
+Conditional PDF for x_1 and c
+
+Short paragraph on sims, focusing on principles rather than details
+
+Licence and accreditation
+
+Consistency between Paper 1 and Paper 2
+
+Definition of SW as a detection service
+
+Table 1: inefficiency factor, contribution vs that used
+
+High level comments 
+
+Sketch possible science scenarios for DES proposal
+
+Literature review
+
+Enable following of thesis-writing?
+
+Paper 1: future wide field survey predictions
+
+Drawing samples from the GMM likelihood model
+
+M31 velocities must agree with Van Der Marel et al (2012)
+
+README needs contact etc information
+
+WL hierarchical inference theory
+
+Re-using LePhare CFHTLenS photo-zs?
+
+Workshop announcement timeline
+
+Website sections, content
+
+Website background images
+
+WL/HB project paragraph for SDSI records
+
+Merge back in BORG code?
+
+Brief BORG wiki documentation
+
+Weak lensing hierarchical inference
+
+wiki/organisation updates: Stanford Data Science Initiative project, BORG project
+
+Depth-dependent alpha parameter
+
+Figures need to be editable, high resolution etc
+
+Github Familiarity
+
+Use gh-pages to make workshop website?
+
+Workshop design
+
+LaTeX infrastructure
+
+White paper design
+
+The Naming of Things
+
+Beyond first light: simple script to make simple images, etc
+
+Star/Quasar implementation is not clean
+
+Host script refactor
+
+Color painting script refactor
+
+Magnification is inconsistent with kappa and gamma in table
+
+Model checking discussion
+
+Refactor code before carrying out experiments
+
+Upload whiteboard to trello
+
+Notes on basic ABC
+
+Toy Problem: 1D Gaussian Width 
+
+MultiPop testing: run SinglePop model on MultiPop data and vice versa
+
+How fast is the importance sampling?
+
+Math needs writing down
+
+Refactor to enable different models to be run with the same importance_sampling code?
+
+PhoSim Cluster Image 
+
+Which Pointing?
+
+Twinkles vs OM10 mash-up
+
+Twinkle Sprinkler
+
+Get Twinkles On The Sky
+
+WorkFlowChart
+
+Time Delay Cosmography example needs illustrating!
+
+Import error: no module called lsst.sims!
+
+Nbviewer unable to display notebooks
+
+Address Aprajita's comments
+
+Where should the Twinkles images and DM catalogs be generated?
+
+What form of output will enable the desired analyses?
+
+How much of the DM stack is available today to get to a catalog?
+
+Are SNe’s now available to CatSim? 
+
+Ten years worth of 10 arc-minute patches determined by OpSim: how much CPU is that for PhoSim?
+
+Plan for Twinkles Run 1
+
+The TeaBot should CONGRATULATE the paper author
+
+Allen Downey's "Think Bayes" 
+
+rkeisler fork needs watching
+
+Moving beyond Gonzalez, Kravtsov & Gnedin (2014)
+
+Senior thesis plots need to be stored in a subdir
+
+Senior thesis needs a latex file
+
+Reading in halos and evaluating likelihood
+
+Consuelo information needs distilling from Michael's email into our notes
+
+SDSS DR8 testbed training set
+
+Initial SDSS object pre-selection
+
+Understand XD
+
+Merge proto repo into this one
+
+What if we had done Stage 2 with only high skill volunteers?
+
+Citation guidelines
+
+Helper text should disappear automagically when you start typing
+
+Refactor model init code
+
+Halo data: which simulation to use? And where are the catalogs?
+
+Do brief ideas already submitted to the Journal on figshare need re-ingesting?
+
+Make "standard" HumVI PNGs of all DES test images
+
+Write abstract for eSWAP paper
+
+Start latex document for eSWAP paper
+
+Set up gh-publishing
+
+Start LensedImageTest.ipynb
+
+What is "black hole scouring"?
+
+Make plot showing properties of Virgo ellipticals
+
+Repo needs tidying up
+
+Check/enhance notes on technical justification for this project
+
+Too much email!
+
+Supernova hosts and Lens galaxies
+
+Pointing center
+
+Basic CatSim-PhoSim workflow?
+
+How many lensed quasars do we need (roughly)?
+
+How many supernovae do we need (roughly)?
+
+Edit DESC confluence to point at this repo
+
+New milestone required! First images?
+
+Deflection angle accuracy could be improved?
+
+Link to citizen astronomy review example
+
+Realize the SDSS galaxy model
+
+Querying for halos
+
+Pixel-painting code needs checking in
+
+Notes on data source, munging etc
+
+Demo suggestion: hot air
+
+Do we need a "playground" class?
+
+Represent agents as cartoon children
+
+Write simple plot function to enable visualization of maps
+
+Write out analytic SIE kappa map as a FITS image
+
+Merge back into master and delete add_analytic_SIE branch
+
+Write out plan of attack in md cells of notebook
+
+Refactor to have analyticSIELens inherit from GravitationalLens
+
+import numpy as np
+
+Add names to the index.html sidebar
+
+I see everything twice!
+
+Wep page needs giant "Send Feedback" button
+
+import sciencesays results in odd-looking empty figure
+
+Literate programming
+
+Animated plot looks different from current state plot
+
+Local rules need to be passed to agents somehow
+
+Refactor into package
+
+Adding images to the README
+
+Write paper for AJP!
+
+Cool pics on README or gh-pages
+
+Thanks for a great science hack day!
+
+Paint it black
+
+Figure out js script dependencies, make collision demo work in test_universe.html
+
+Make gh-pages site, with test_universe.html page
+
+Tweet triumph, drink beer
+
+Update the README with new "submitted" status
+
+Reduce abstract to 150 words
+
+Prepare submission bundle
+
+Add keywords
+
+Possible space-saver: drop GZ participation Figure (3)?
+
+Consider dropping passive observing section
+
+Assess relevance of ideas in non-astronomy projects
+
+Rebalance observing section between planetary and galactic
+
+Add references to HST surveys
+
+CJL acknowledgements?
+
+Simplest possible build_from method
+
+Refactor to create an importable module 
+
+SigmaCrit units
+
+Reduce text to well under word limit
+
+Merge in GZ Kaggle PR 
+
+What did Crowston et al learn about CS project design?
+
+Few sentence summary at end of observing section, to wrap up.
+
+Ensure all figures are correctly accredited
+
+Address LNF comments
+
+Passing mention of MOOCs in future or collaboration sections
+
+Update PLAN with finished posts, to act as examples to others
+
+Tidy up blog PLAN, make sure all hackpads are captured
+
+Update PLAN with first few bloggers
+
+Move wiki to here
+
+Move issues from astrohackweek.github.io to here, idiot
+
+One folder per lecture day?
+
+Hack registry?
+
+MPLD3 upgrade to Figure 8.10 - Gaussian Processes example!
+
+What's the final thought?
+
+AstroHackFieldnotes: list needs better formatting
+
+Decide location and date for 2015
+
+2014 hack week survey
+
+Automatic choice of dimensionality for PCA
+
+Bayesian blocks function should return N posterior samples
+
+Interactive multicolor plot
+
+Start the week's hacking with a small group jam session
+
+Replace wiki with 2015 version
+
+Rename repo "AstroHackWeek"?
+
+Quench numbers
+
+Radio Galaxy Zoo?
+
+New example: multimodal.py, to test PTSampler evidence estimation
+
+Fix all citation warnings in shareable draft
+
+Need a reference for the Green Peas
+
+Prepare abstract PDF and submit it to arxiv
+
+2-panel figure showing AAVSO and microFUN highlights?
+
+Add Voorwerp figure?
+
+Include Eyewire citations, URL
+
+Provide bibtex references in IBCC classification analysis section
+
+Merge in AAVSO feedback from Arne Henden
+
+Implement 2-part plan in section headings/preambles
+
+Read entire review, edit for coherence and consistency
+
+Edit "collaboration or competition" in light of Foldit review
+
+Check page count
+
+Notes on enabling citizens to build their own classification interfaces?
+
+Bibtex references for Planet Hunters part of Time Domain Astronomy case study
+
+KNN vs GMM?
+
+Read conclusions, edit and enhance
+
+Fix README to explain issue approach to collecting feedback
+
+Make sure introduction explains "case study" strategy
+
+Change local remote to point at renamed repo
+
+Make sure deltavrot correction is implemented correctly
+
+Replace spaghettilens URL with labs.spacewarps.org
+
+Plot REin vs z scatter plot, with RF and SARCS candidates too!
+
+Acknowledge contributions from all SW volunteers
+
+Start eSWAP paper for Human Computation, write up offline SWAP math
+
+How do the ROC curves change if we rank by Pmax, not P?
+
+Remake Figure 8 to show stage 2 skill vs stage 1 skill
+
+Read paper 1, advise on how to write about offline analysis
+
+Make blacklist of subjects to ignore when making FP atlas subjects
+
+Work in Leigh's edits for Section 2 and 3, attend to page limits
+
+Expert grades for offline extras
+
+Emulate dynamic stage 2 by re-running stage 2 with just the high stage 1 skill users
+
+mongodb.py not reading sim flavor correctly?
+
+Revise personal expert grades while viewing the two candidate galleries in paper 2
+
+Add notes to text about teams of 100 low skill users, and downweighting of early clicks
+
+Define RF candidate sample
+
+Are the False Negatives due to high skill users making costly mistakes?
+
+Sim completeness as a function of purity, divided by type?
+
+Write paragraph summarizing purity and completeness plot/results
+
+Measure and plot properties of candidate lenses (and lensed features) from RF, AF and SW
+
+Expert grades for Stage 1/2 failures
+
+Projects need milestones
+
+Searchable online documentation
+
+Collaborators need push access
+
+Make completeness vs purity plot
+
+Better legend for ROC curve  plots
+
+Read Van Der Marel et al 2012 
+
+Plot PNGs the right way up
+
+Collect CFHTLS stage 2 subject atlas panels into a tarball of plain PNGs
+
+Plot offline P vs online P for CFHTLS stage 2 subjects
+
+Track arxiv posts from KIPAC people in the last 7 days, and show on a webpage
+
+Sign up all postdocs and students for individual paper suggestions
+
+Send Section 6 ("Understanding the Citizens") to the Zooniverse team for input
+
+Make gallery of new SW lens candidates
+
+Make giant table of SW candidates
+
+Clear up expert disagreements
+
+Plot recovery of known lenses
+
+Description of RingFinder sample in section 2.2
+
+Other (non RingFinder or ArcFinder) lenses in the CFHTLS area
+
+Write introduction
+
+Write an abstract!
+
+Identify sample of new lens candidates, with expert grades, and send to Gavazzi for investigation
+
+Ask LensHunters if they've seen any lensed quasars, or other exotica?
+
+What if? Compare some alternate SW analysis histories, to justify our choices
+
+Write conclusions
+
+Write discussion section: notes for future surveys, and possible improvements to the system
+
+Discuss general properties of FPs and FNs
+
+Introduce SW False Positive Atlas, as a Product
+
+Compare offline and online stage 2 catalogs, before using (?) offline one
+
+Include brief explanation of offline analysis in appendix
+
+Make stage 2 candidate catalog using offline SWAP
+
+Make gallery of example false positives and false negatives
+
+Include example agent histories plot
+
+Include agent PD vs PL plot
+
+P1 classification analysis: include subject trajectory plot
+
+Example images from training sets
+
+Describe training images in P1 section 2.2.2
+
+Incorporate feedback from Edwin
+
+Write P1 data section
+
+Write P2 abstract
+
+Update abstract
+
+Check in paper 2 latex file
+
+Rename repo SpaceWarpsLabs?
+
+Demo site URL?
+
+LensWrangler, LensToy
+
+Start wiki, for discussion of various codes
+
+Domain name
+
+Explain crowd vs expert statistics
+
+Promote Prasenjit up author list!
+
+Make sure abstract is complete
+
+Beef up conclusions
+
+Add screenshot
+
+Check in final figure
+
+Visual Classification: add citation to Crowston paper on PH and Seafloor Explorer
+
+Visual Classification: statement about real time analysis in live projects...
+
+Visual Classification: add SN zoo, PTF refs. 
+
+Visual Classification: Provide citation for ``3 V's'' of big data
+
+Visual Classification: Tidy up the multiple mentions of clickworkers
+
+Visual Classification: GZ section consistency check
+
+Active Obs: review John Johnson's citizen-supported project
+
+Active Obs: review AVSO work
+
+Conclusions: work them into abstract as well
+
+Data Modeling: Provide URLs for spaghettilens and modeling thread on Talk
+
+Citizen-led Enquiry: add refs for Voorwerp science
+
+Data Modeling: review Fold.It, mention gamification
+
+Conclusions: write short piece on characteristics of good citizen science
+
+The Future: write limits/challenges section
+
+Leigh: "monitoring planets" case study needs checking, compressing and possibly splitting up
+
+Live testing
+
+Live testing
+
+Alert the SW science team, inform the volunteers 
+
+Set up monitoring server / "project dashboard"
+
+Implement retirement messaging with SWAPR
+
+Integrate SWAPR code with live stream 
+
+Re-ingest the Stage 2 CFHTLS data to site
+
+Functional test of SWAPR
+
+The Future: draft single section (essay) for discussion
+
+Motivation: update with recent studies
+
+Demographics: update the section with recent studies
+
+Citizen-led Enquiry: write GZ Quench case study
+
+Leigh: What publications have arisen from the online observing facilities?
+
+Leigh: Did the Saturn Storm Watch investigation lead to publications? Uptake by professionals? What enabled it?
+
+Data Modeling: generalize Kaggle section and include GZ challenge
+
+Citizen-led Enquiry: write PH analysis case study
+
+Data Modeling: add notes on modeling in Space Warps
+
+Data Modeling: update MWP and Mergers with references, text
+
+Data Modeling: write preamble
+
+Visual Classification: remove software section, move PH case to Enquiry section
+
+The Future: mention Zoonibot alongside Eyewire bot
+
+The Future: move gamification text to here, and finish it
+
+Demographics: merge in motivation parts from visual classification section
+
+Visual Classification: reduce Snapshot Serengeti to an endnote on Galaxy Zoo
+
+Leigh: What is there to be said about "data mining for asteroids and TNOs"?
+
+Visual Classification: add classification analysis section, redistribute eg IBCC text
+
+Visual Classification: add Space Warps!
+
+Visual Classification: add piece on Richards & Bloom use of SN zoo
+
+Visual Classification: add lunar projects, clickworkers citations
+
+Visual Classification: write GZ science paragraph
+
+Visual Classification: details of galaxy zoo accuracy
+
+Visual Classification: add galaxy zoo participation statistics
+
+Visual Classification: add box diagram for GZ2
+
+Visual Classification: add refs for Schawinski & Nair
+
+Visual Classification: add refs for "complex [morphology] proxies", and also for their failure
+
+Explain use of term "crowd-sourcing"
+
+Visual Classification: add stardust@home refs, url
+
+Make Section 3 be "Visual Classification"
+
+Find home for UnmannedSpaceflight example
+
+Re-write UnmannedSpaceflight paragraph with more science focus
+
+Historical example: Halley eclipse
+
+Reduce and move image processing text into Active Observing section
+
+Instrumentation: cut out section, check Active Obs contains enough of the material
+
+Passive Obs: condense Geert's Twitter study, add meteor tracking app, move Chelyabinsk meteor mention to here
+
+Passive Obs: finish Comet Holmes case study
+
+Active Obs: reorganise work into solar system, galactic and  extragalactic 
+
+Active Obs: track down references for variable stars work
+
+Active Obs: draft paragraphs on galactic and extragalactic work
+
+Active Obs: research references for exoplanet follow-up
+
+Active Obs: add refs for comets, asteroids etc
+
+Possible module structure, not well tested. sncosmo missing
+
+Skill vs Experience at Fixed Effort
+
+Stage 2 ROC curves comparing online/offline, training only vs training+test
+
+nxutils/Path import
+
+orientation errors in model.spawn_lens()?
+
+Fitting Nebula and Lens equally
+
+Manual init catalogs not being interpreted properly?
+
+Are CFHTLS stage 2 subjects just stage 1 subjects with an additional label added?
+
+Paper 1: first draft of crowd analysis section ready for comments
+
+Merge in better agent bureaucracy from Baumer and Davis' repo
+
+One paper per email, abstract as well as title, cc several people at once
+
+Model panel separate from prediction panel
+
+User-defined lasso tightness
+
+PSF width needs to be set by user
+
+Pixel scale needs to be set by the user
+
+Ingest image from a URL
+
+Smaller test image
+
+Paper introduction, lay out LT strategy
+
+Paper 1: first draft of introduction ready for comments
+
+Tractor Paper submission milestone needs a due date
+
+"system" paper abstract needs Lang/Hogg input
+
+Getting stuck in local chisq minima
+
+Automatic stopping criterion?
+
+New paper abstract
+
+Freeze galaxy branch is broken
+
+PSF images for SDSS examples
+
+Fit convergence? Singly-imaging Lenses?
+
+Optionally plot all panels in the same giant figure
+
+Plots should show image and model names overlaid
+
+SDSS PhotoCal
+
+sample() does not save best sample (and lnprob value) in self
+
+SDSS cutouts have broken WCS
+
+"contains_points" error from lens plotting
+
+Sampling is not operational
+
+Refactor model exploration
+
+Refactor model initialisation
+
+Sketch paper outline
+
+SDSS images array index problem
+
+Columns in data file are not explained
+
+Add links to LSST software confluence pages on html pages
+
+Make some sort of doc with all Stage 2 candidates, to enable expert grading, comments for Paper 2
+
+Paper 1 methodology text
+
+Paper 2 conclusions, intro questions, abstract
+
+Paper 2 needs a skeleton paper
+
+CornerPlot everything
+
+Recipes needs a "launch" plan (date, circumstances, etc)
+
+Add BSD License to repo and blurb to all source files
+
+importance sampling doc: address Marshall comments
+
+Sim lensed galaxy hit radius needs to be 30, not 20 pixels
+
+Progress not being recorded in Recents, My Candidates etc
+
+Tutorial/feedback could be more helpful/encouraging
+
+Images not displaying fully in Tools
+
+Images too small in Talk
+
+Marker placed in QD can't be removed on returning to the main image
+
+Tools viewer needs new scale, provenance etc
+
+Tutorial subjects
+
+Label VICS82 annotations as project = VICS82, stage = 1
+
+Ingest VICS82 training set
+
+Spotters Guide text
+
+Twitter link on landing page?
+
+About page: science team zooniverse IDs would be more useful than twitter handles?
+
+Landing page no longer has link to Talk
+
+Duds!
+
+Error reading mask (alpha channel) images
+
+QD: images displayed too small
+
+Tutorial text not being displayed
+
+New classifications database at start of VICS82 project
+
+10 pixel offset *might* cause sim positions to be missed when marking
+
+QD: image-dependent display scales
+
+FITS images not available from QD
+
+Feedback text
+
+Tutorial subjects
+
+New quick guide thumbnail images
+
+Upgrade FAQ for VICS82
+
+New "Home" tab for Spotters Guide
+
+BBC-sponsored landing page needs checking in
+
+Data missing in Dashboard
+
+"Known Lens" labels missing in Talk
+
+False positive training images missing FITS files
+
+Make test arc masks for known lenses
+
+Write "Life After Space Warps" blog post
+
+Get LRG RAs and Decs
+
+Write new About text for VICS82
+
+Testing on GREAT08 
+
+Simplest Possible milestone has no date
+
+Get SLAC user account for Dstn
+
+Bring SLAC computing gurus up to speed
+
+Hierarchical inference on the cheap
+
+Read model-fitting shape estimation papers
+
+README contains copyright statement 
+
+Reset max_classifications to 20 to get Stage 1 finished
+
+Source code does not display too well
+
+Sphinx output needs streamlining
+
+Browsable pages on github pages are un-styled
+
+Sphinx color scheme is not DESC-compliant
+
+Start a gh-pages branch, and check in the required sphinx html
+
+Convert recipe recipe to a sphinx rst file
+
+Get sphinx html onto web
+
+Organise docs into separate directory
+
+Run the star/gal recipe with the SLAC installation
+
+Write the recipe for how to write a recipe
+
+Make sphinx work on star/gal script
+
+Remaining subjects are too uncertain to be rejected?
+
+Slower image delivery at Stage 2?
+
+Sims not markable?
+
+Markers appear with centroids offset to above the cursor tip
+
+Found sim feedback error: tutorial is null?
+
+Missed sim feedback error: details['missed'] are undefined?
+
+Generate FITS images
+
+A wider range of LRGs
+
+Adding columns to lenses table: switch to astropy
