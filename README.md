@@ -4,7 +4,7 @@ There are many simulation tools used in DESC - OpSim, CatSim, GalSim, PhoSim - b
 
 The answer: *PhilSim*.
 
-![alt tag](https://raw.githubusercontent.com/joezuntz/philsim/master/phil.jpb)
+![alt tag](https://raw.githubusercontent.com/joezuntz/philsim/master/phil.png)
 
 Sometimes, Phil is asleep or out of the country.  At those times you can generate a stream of GitHub issues using PhilSim.  PhilSim uses a Markov Chain trained from all the issues Phil has ever opened on GitHub, and can either just print out a suggested issue, or file it directly on a repo of your choice.
 
