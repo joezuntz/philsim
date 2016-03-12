@@ -19,7 +19,11 @@ Put this token in token.txt in the philsim directory.
 Then you can do:
 
     python philsim.py  
-    # prints out a new issue
+    # prints out a new issue, like this one:
+    What form of output will enable the desired analyses
+    ----------------------------------------------------
+    This is primarily for the names of the sky.  md files to document other aspects of the 3rd paragraph as well as sky positions.  Let's make a nice little paper for the histograms and for the extra 238 candidates.
+
 
 Or:
 
